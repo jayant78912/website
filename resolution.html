@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Baby — Closing the loop for public health systems</title>
+    <meta name="description" content="Khushi Baby partners with government health departments in India to close the feedback loop between data collection and coordinated care — reaching 60M+ people through 85,000+ health workers across Rajasthan, Maharashtra, and Karnataka.">
+    <meta property="og:title" content="Khushi Baby — Closing the loop for public health systems">
+    <meta property="og:description" content="Making public health data meaningful, connected, and actionable across India.">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"NGO","name":"Khushi Baby","url":"https://www.khushibaby.org","description":"Khushi Baby strengthens public health systems by closing care feedback loops at the last mile in India.","foundingDate":"2014","founder":[{"@type":"Person","name":"Ruchit Nagar"},{"@type":"Person","name":"Mohammed Shahnawaz"}],"areaServed":"India","numberOfEmployees":"120"}</script>
+    <!-- GA placeholder -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+            /* DIA node colors */
+            --dc:#0F6E56; --dbg:#E8F3EF; /* Data = green */
+            --ic:#C0392B; --ibg:#FDECEA; /* Insights = red */
+            --ac:#2B6CB0; --abg:#EBF4FF; /* Action = blue */
+            /* Platform / Process */
+            --chip:#1D9E75; --chip-bg:#E1F5EE; /* CHIP = light green */
+            --hac:#BA7517; --hac-bg:#FDF6EC; /* HAC = gold */
+            /* Neutrals */
+            --w:#fff;--f:#F7F5F2;--t:#1A1A1A;--t2:#3D3D3D;--t3:#555;--t4:#888;--t5:#aaa;--bd:#E8E5E0;
+            --sf:'Playfair Display',Georgia,serif;
+            --ss:'Source Sans 3',-apple-system,sans-serif;
+            --mx:1100px;
+        }
+        html{scroll-behavior:smooth}
+        body{font-family:var(--ss);background:var(--w);color:var(--t3);font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+        img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+        .w{max-width:var(--mx);margin:0 auto;padding:0 40px}
+        .ey{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--hac);margin-bottom:12px}
+        .sh{font-family:var(--sf);font-size:clamp(1.5rem,3vw,2.3rem);font-weight:500;color:var(--t);line-height:1.25;margin-bottom:14px}
+        .sh em{font-style:italic;color:var(--dc)}
+        .sp{font-size:1rem;color:var(--t3);max-width:580px;line-height:1.75}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--bd)}
+        .nav-in{max-width:var(--mx);margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+        .logo{font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--dc);cursor:pointer}
+        .logo span{color:var(--hac)}
+        .nr{display:flex;align-items:center;gap:6px}
+        .nr>a,.dd>a{font-size:.87rem;font-weight:500;color:var(--t4);padding:8px 14px;border-radius:6px;transition:all .15s;cursor:pointer;display:inline-block}
+        .nr>a:hover,.dd>a:hover,.nr>a.on,.dd>a.on{color:var(--t)}.nr>a.on,.dd>a.on{font-weight:600}
+        .nr .dn{background:var(--dc)!important;color:var(--w)!important;font-weight:600!important;padding:9px 22px!important}
+        .nr .dn:hover{background:#0A4F3D!important}
+        .dd{position:relative}.dd-m{display:none;position:absolute;top:100%;left:0;background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:6px 0;min-width:210px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:300}
+        .dd:hover .dd-m{display:block}.dd-m a{display:block;padding:8px 18px;font-size:.84rem;color:var(--t3);cursor:pointer}.dd-m a:hover{background:var(--f);color:var(--t)}
+
+        /* PAGES */
+        .pg{display:none;padding-top:64px;min-height:100vh}.pg.on{display:block}
+
+        /* HERO */
+        .hb{width:100%;height:60vh;min-height:400px;max-height:620px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+        .hb .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+        .hb .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.5) 100%)}
+        .hb .hc{position:relative;z-index:2;padding:0 40px 44px;max-width:var(--mx);margin:0 auto;width:100%}
+        .hb h1{font-family:var(--sf);font-size:clamp(2rem,4.5vw,3rem);font-weight:500;color:var(--w);line-height:1.2;max-width:640px}
+        .hb h1 em{font-style:italic}
+        .hb .hs{font-size:1.02rem;color:rgba(255,255,255,.8);max-width:520px;margin-top:14px;line-height:1.7}
+
+        /* SECTIONS */
+        .s{padding:80px 0}.s-a{background:var(--f)}.s-g{background:#0A4F3D;color:var(--w)}.s-b{border-bottom:1px solid var(--bd)}.s-w{background:var(--w)}
+
+        /* LAYOUTS */
+        .g2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+        .g2.rv .g2-l{order:2}.g2.rv .g2-r{order:1}
+        .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+        /* Photo placeholder */
+        .ph{border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:var(--dbg);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--t4);font-style:italic;text-align:center;padding:24px;line-height:1.5}
+
+        /* Feature text */
+        .ft h2{font-family:var(--sf);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:500;color:var(--t);line-height:1.25;margin-bottom:16px}
+        .ft h2 em{font-style:italic;color:var(--dc)}
+        .ft p{font-size:.95rem;line-height:1.8;color:var(--t3);margin-bottom:14px}
+        .ft .lk{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--dc);margin-top:6px;cursor:pointer;transition:gap .2s}
+        .ft .lk:hover{gap:10px}
+
+        /* Stats bar */
+        .sb{padding:48px 0}.sr{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+        .si .sn{font-family:var(--sf);font-size:2.2rem;font-weight:600;color:var(--w);line-height:1}
+        .si .sl{font-size:.82rem;color:rgba(255,255,255,.55);margin-top:6px}
+
+        /* Stats icons */
+        .sti{text-align:center;padding:20px}
+        .sti .sn{font-family:var(--sf);font-size:1.9rem;font-weight:700;color:var(--dc);line-height:1}
+        .sti .sl{font-size:.84rem;color:var(--t3);margin-top:6px;line-height:1.4}
+
+        /* Centered */
+        .ct{text-align:center;max-width:720px;margin:0 auto}
+        .ct h2{font-family:var(--sf);font-size:clamp(1.3rem,2.5vw,1.85rem);font-weight:400;color:var(--t);line-height:1.5}
+        .ct h2 em{font-style:italic;color:var(--dc)}
+
+        /* Cards */
+        .cd{border:1px solid var(--bd);border-radius:8px;padding:32px 28px;position:relative;overflow:hidden;background:var(--w)}
+        .cd::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+        .cd.cg::before{background:var(--chip)}.cd.co::before{background:var(--hac)}
+        .cd .cl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+        .cd.cg .cl{color:var(--chip)}.cd.co .cl{color:var(--hac)}
+        .cd h3{font-family:var(--sf);font-size:1.2rem;font-weight:600;color:var(--t);margin-bottom:10px;line-height:1.3}
+        .cd>p{font-size:.9rem;line-height:1.75;color:var(--t3)}
+
+        /* Expandable */
+        .exp-btn{display:inline-flex;align-items:center;gap:6px;font-size:.84rem;font-weight:600;color:var(--dc);cursor:pointer;margin-top:12px;background:none;border:none;font-family:var(--ss);padding:6px 12px;border-radius:4px;border:1px solid var(--dbg);transition:background .15s}
+        .exp-btn:hover{background:var(--dbg)}
+        .exp-btn.co-btn{color:var(--hac);border-color:var(--hac-bg)}.exp-btn.co-btn:hover{background:var(--hac-bg)}
+        .exp-c{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--bd);font-size:.88rem;line-height:1.75;color:var(--t3)}
+        .exp-c.open{display:block;animation:fi .3s ease}
+        @keyframes fi{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+        /* ── DIA INTERACTIVE LOOP ── */
+        .dia-box{max-width:780px;margin:0 auto;background:var(--w);border:1px solid var(--bd);border-radius:8px;overflow:hidden}
+        .dia-svg-w{padding:20px 32px 0}
+        .dia-svg-w svg{width:100%;height:auto;display:block}
+        .dia-info{border-top:1px solid var(--bd);padding:20px 32px 24px;min-height:56px}
+        .dia-hint{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t5)}
+        .dia-det{display:none;animation:fi .3s ease}
+        .dia-det.on{display:block}
+        .dia-det-ey{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t4);margin-bottom:4px}
+        .dia-det-t{font-family:var(--sf);font-size:1.3rem;font-weight:600;color:var(--t);margin-bottom:8px}
+        .dia-det-b{font-size:.86rem;line-height:1.75;color:var(--t3);max-width:620px}
+        .dia-sts{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--bd)}
+        .dia-sts .sn{font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--dc);line-height:1}
+        .dia-sts .sl{font-size:.7rem;color:var(--t4);margin-top:2px}
+
+        /* ── DIA LEGEND ── */
+        .dia-legend{display:flex;gap:18px;margin-bottom:16px;align-items:center;flex-wrap:wrap}
+        .dia-legend-i{display:flex;align-items:center;gap:5px;font-size:.75rem;font-weight:600;color:var(--t4)}
+        .dia-legend-i .dot{width:14px;height:3px;border-radius:2px}
+        .dot-d{background:var(--dc)}.dot-i{background:var(--ic)}.dot-a{background:var(--ac)}.dot-chip{background:var(--chip)}.dot-hac{background:var(--hac)}
+
+        /* DIA underlines */
+        .ud{border-bottom:2px solid var(--dc);padding-bottom:1px}
+        .ui{border-bottom:2px solid var(--ic);padding-bottom:1px}
+        .ua{border-bottom:2px solid var(--ac);padding-bottom:1px}
+
+        /* ── INNOVATIONS CAROUSEL ── */
+        .inno-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 0 16px;scrollbar-width:thin}
+        .inno-track::-webkit-scrollbar{height:6px}.inno-track::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+        .inno-card{min-width:300px;max-width:340px;flex-shrink:0;scroll-snap-align:start;background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:28px 24px}
+        .inno-card h4{font-family:var(--sf);font-size:1.1rem;font-weight:600;color:var(--t);margin-bottom:8px}
+        .inno-card p{font-size:.86rem;line-height:1.7;color:var(--t3);margin-bottom:10px}
+        .inno-card .inno-stat{font-size:.78rem;color:var(--dc);font-weight:600}
+
+        /* ── MODEL STEPS ── */
+        .msteps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:40px 0}
+        .mst{text-align:center;padding:16px 8px;background:var(--f);border-radius:8px;border:1px solid var(--bd)}
+        .mst-n{width:28px;height:28px;border-radius:50%;background:var(--hac);color:var(--w);font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 8px}
+        .mst-t{font-size:.76rem;font-weight:600;color:var(--t);line-height:1.35;margin-bottom:3px}
+        .mst-d{font-size:.68rem;color:var(--t4);line-height:1.4}
+
+        /* ── TABS ── */
+        .tabs-n{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:28px;border-bottom:2px solid var(--bd)}
+        .tb{font-family:var(--ss);font-size:.86rem;font-weight:500;color:var(--t4);padding:12px 18px;border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s}
+        .tb:hover{color:var(--t)}.tb.on{color:var(--dc);font-weight:600;border-bottom-color:var(--dc)}
+        .tp{display:none;animation:fi .3s ease}
+        .tp.on{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+        .tp-ph{border-radius:8px;overflow:hidden;aspect-ratio:3/2;background:var(--dbg);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--t4);font-style:italic;text-align:center;padding:20px}
+        .tp-t h3{font-family:var(--sf);font-size:1.25rem;font-weight:600;color:var(--t);margin-bottom:10px;line-height:1.3}
+        .tp-t p{font-size:.9rem;line-height:1.75;color:var(--t3);margin-bottom:10px}
+        .tp-t .foc{font-size:.84rem;color:var(--t2);margin-top:14px;padding:12px 16px;background:var(--dbg);border-radius:6px}
+        .tp-t .foc strong{color:var(--dc)}
+
+        /* Story cards */
+        .sc{background:var(--w);border-radius:8px;overflow:hidden;border:1px solid var(--bd);transition:box-shadow .3s}
+        .sc:hover{box-shadow:0 6px 24px rgba(0,0,0,.06)}
+        .sc-b{padding:22px 22px 18px}
+        .sc-tg{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dc);margin-bottom:8px}
+        .sc h3{font-family:var(--sf);font-size:1.05rem;font-weight:600;color:var(--t);margin-bottom:8px;line-height:1.3}
+        .sc p{font-size:.84rem;line-height:1.65;color:var(--t3);margin-bottom:12px}
+        .sc-m{display:flex;gap:18px;padding-top:12px;border-top:1px solid var(--bd)}
+        .sc-m .mn{font-family:var(--sf);font-size:1.15rem;font-weight:700;color:var(--dc);line-height:1}
+        .sc-m .ml{font-size:.67rem;color:var(--t4);margin-top:2px;line-height:1.3}
+
+        /* ── INDIA MAP ── */
+        .map-w{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+        .map-svg-w{max-width:440px}
+        .map-svg-w svg{width:100%;height:auto}
+        .map-st{cursor:pointer;transition:opacity .2s,filter .2s}
+        .map-st:hover{opacity:.85;filter:brightness(1.1)}
+        .map-info{min-height:120px}
+        .map-hint{font-size:.86rem;color:var(--t4);margin-bottom:12px}
+        .mc{display:none;padding:20px 24px;background:var(--w);border:1px solid var(--bd);border-radius:8px;animation:fi .3s}
+        .mc.on{display:block}
+        .mc h4{font-family:var(--sf);font-size:1.15rem;font-weight:600;color:var(--t);margin-bottom:6px}
+        .mc p{font-size:.86rem;line-height:1.65;color:var(--t3)}
+
+        /* Videos */
+        .vid{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;margin:20px 0}
+        .vid iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:8px}
+
+        /* Team */
+        .team-g{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+        .tc{text-align:center}.tc-i{width:100px;height:100px;border-radius:50%;background:var(--bd);margin:0 auto 10px;overflow:hidden}
+        .tc h4{font-size:.85rem;font-weight:600;color:var(--t)}.tc p{font-size:.75rem;color:var(--t4)}
+
+        /* Partners */
+        .part-g{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+        .pi{padding:8px 16px;background:var(--f);border:1px solid var(--bd);border-radius:6px;font-size:.78rem;font-weight:500;color:var(--t2);white-space:nowrap}
+
+        /* Form - collapsible */
+        .form-toggle{display:inline-flex;align-items:center;gap:8px;font-family:var(--ss);font-size:.92rem;font-weight:600;color:var(--dc);cursor:pointer;padding:12px 24px;border:1.5px solid var(--dc);border-radius:6px;background:none;transition:all .15s;margin-top:16px}
+        .form-toggle:hover{background:var(--dbg)}
+        .form-wrap{display:none;margin-top:24px;padding-top:24px;border-top:1px solid var(--bd);animation:fi .3s}
+        .form-wrap.open{display:block}
+        .form-g{display:grid;gap:14px;max-width:480px}
+        .form-g input,.form-g textarea,.form-g select{font-family:var(--ss);font-size:.9rem;padding:11px 16px;border:1px solid var(--bd);border-radius:6px;background:var(--w);color:var(--t);width:100%}
+        .form-g input:focus,.form-g textarea:focus{outline:none;border-color:var(--dc)}
+        .form-g textarea{min-height:100px;resize:vertical}
+        .form-g label{font-size:.82rem;font-weight:600;color:var(--t2);margin-bottom:-6px}
+
+        /* Buttons */
+        .btn{font-family:var(--ss);font-size:.88rem;font-weight:600;padding:13px 26px;border-radius:6px;border:none;cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:8px}
+        .btn-g{background:var(--dc);color:var(--w)}.btn-g:hover{background:#0A4F3D}
+        .btn-o{background:transparent;color:var(--t);border:1.5px solid var(--bd)}.btn-o:hover{border-color:var(--t4)}
+        .btns{display:flex;gap:12px;flex-wrap:wrap}
+
+        /* Scale */
+        .scale-cd{padding:24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px}
+        .scale-cd h4{font-family:var(--sf);font-size:1.15rem;font-weight:600;color:var(--w);margin-bottom:8px}
+        .scale-cd h4 span{color:#C8871A}
+        .scale-cd p{font-size:.84rem;line-height:1.7;color:rgba(255,255,255,.6)}
+
+        /* Testi */
+        .testi{padding:64px 0;text-align:center}
+        .testi blockquote{font-family:var(--sf);font-size:clamp(1.05rem,1.8vw,1.3rem);font-weight:400;font-style:italic;color:var(--t);line-height:1.6;max-width:660px;margin:0 auto 20px}
+        .testi cite{font-style:normal;display:block}
+        .testi cite strong{font-size:.86rem;font-weight:600;color:var(--t);display:block}
+        .testi cite span{font-size:.78rem;color:var(--t4)}
+
+        /* Press */
+        .feat-r{display:flex;justify-content:center;align-items:center;gap:36px;flex-wrap:wrap;opacity:.45}
+        .feat-r span{font-size:.87rem;font-weight:600;color:var(--t2);white-space:nowrap}
+
+        /* Footer */
+        footer{padding:48px 0;border-top:1px solid var(--bd);background:var(--f)}
+        .fg{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:28px}
+        .fc .fl{font-family:var(--sf);font-size:1.15rem;font-weight:700;color:var(--dc);margin-bottom:10px}.fc .fl span{color:var(--hac)}
+        .fc>p{font-size:.82rem;color:var(--t4);line-height:1.6}
+        .fc h4{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--t2);margin-bottom:10px}
+        .fc a{display:block;font-size:.85rem;color:var(--t3);margin-bottom:7px;cursor:pointer}.fc a:hover{color:var(--dc)}
+        .fb{margin-top:32px;padding-top:16px;border-top:1px solid var(--bd);display:flex;justify-content:space-between;font-size:.74rem;color:var(--t5)}
+
+        /* Responsive */
+        @media(max-width:860px){
+            .g2,.g2.rv,.g3,.tp.on,.map-w{grid-template-columns:1fr}
+            .g2.rv .g2-l,.g2.rv .g2-r{order:unset}
+            .sr{grid-template-columns:1fr 1fr}
+            .msteps{grid-template-columns:1fr 1fr}
+            .team-g{grid-template-columns:repeat(3,1fr)}
+            .fg{grid-template-columns:1fr 1fr}
+            .tabs-n{gap:2px}.tb{font-size:.78rem;padding:10px 12px}
+            .nr>a:not(.dn),.dd{display:none}
+            .hb{min-height:300px}
+            .fb{flex-direction:column;gap:8px}
+            .inno-card{min-width:260px}
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav"><div class="nav-in">
+    <div class="logo" onclick="go('home')">Khushi<span>Baby</span></div>
+    <div class="nr">
+        <a onclick="go('home')" data-pg="home">Home</a>
+        <div class="dd"><a onclick="go('about')" data-pg="about">About Us</a><div class="dd-m">
+            <a onclick="go('about','story')">Our Story</a><a onclick="go('about','mission')">Mission & Vision</a><a onclick="go('about','team')">Our Team</a><a onclick="go('about','partners')">Partners</a><a onclick="go('about','reports')">Reports & Financials</a>
+        </div></div>
+        <div class="dd"><a onclick="go('model')" data-pg="model">Model</a><div class="dd-m">
+            <a onclick="go('model','dia')">DIA Framework</a><a onclick="go('model','engage')">How We Engage</a><a onclick="go('model','nandurbar')">Nandurbar Example</a><a onclick="go('chip')">CHIP Platform</a><a onclick="go('model','scale')">Scaling for Impact</a>
+        </div></div>
+        <div class="dd"><a onclick="go('impact')" data-pg="impact">Impact</a><div class="dd-m">
+            <a onclick="go('impact','glance')">At a Glance</a><a onclick="go('impact','map')">Where We Work</a><a onclick="go('impact','programs')">Health Programs</a>
+        </div></div>
+        <a onclick="go('involved')" data-pg="involved">Get Involved</a>
+        <a class="dn" onclick="go('involved')">Donate</a>
+    </div></div></nav>
+
+<!-- ██████ HOME ██████ -->
+<div class="pg on" id="pg-home">
+    <div class="hb"><div class="bg" style="background-image:url('https://cdn.prod.website-files.com/665fe4f280c6b2f1935e282a/676a99598eee0e55bcf6b947_frontline%20workers%20new%20(1)%20(1)%20(1)%20(1).jpg')"></div><div class="ov"></div>
+        <div class="hc"><h1>Making public health data <em>meaningful, connected, and actionable</em></h1><p class="hs">Khushi Baby partners with government health departments in India to close the feedback loop between data collection and coordinated care.</p></div></div>
+
+    <section class="s sb s-g"><div class="w"><div class="sr">
+        <div class="si"><div class="sn">60M+</div><div class="sl">People's health tracked</div></div>
+        <div class="si"><div class="sn">85,000+</div><div class="sl">Health workers supported</div></div>
+        <div class="si"><div class="sn">3 states</div><div class="sl">Rajasthan · Maharashtra · Karnataka</div></div>
+        <div class="si"><div class="sn">$20M</div><div class="sl">Government funds invested</div></div>
+    </div></div></section>
+
+    <!-- Problem -->
+    <section class="s s-b"><div class="w"><div class="g2">
+        <div class="g2-l" style="border-radius:8px;overflow:hidden"><div class="vid" style="margin:0"><iframe src="https://www.youtube.com/embed/gmpiuckL6DM" allowfullscreen loading="lazy"></iframe></div></div>
+        <div class="g2-r ft"><h2>Public health systems need transparency and accountability to create <em>impact</em></h2>
+            <p>Across India, community health workers like Bharti spend 50 hours every month recording data across 10 registers and 5 mobile applications — feeding 50 portals that rarely talk to each other.</p>
+            <p>This data serves a reporting function, not a care function. High-risk mothers are identified but never followed up. Malnourished children are flagged in one department and lost in another. The system collects, but it doesn't <strong>close the loop</strong>.</p>
+        </div></div></div></section>
+
+    <!-- Model Preview with DIA Loop -->
+    <section class="s s-a s-b"><div class="w">
+        <div style="text-align:center;margin-bottom:40px"><div class="ey">Our Operating Model</div><h2 class="sh">Data — Insights — <em>Action</em></h2><p class="sp" style="margin:0 auto">We deploy a technology platform and an embedded human process to complete public healthcare feedback loops.</p></div>
+        <!-- Interactive DIA Diagram -->
+        <div class="dia-box">
+            <div class="dia-svg-w">
+                <svg viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg">
+                    <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+                    <circle cx="320" cy="250" r="130" fill="none" stroke="#D8E5E2" stroke-width=".5"/>
+                    <!-- CHIP arc (light green) -->
+                    <path d="M306 409A160 160 0 0 1 306 91" fill="none" stroke="#1D9E75" stroke-width="4" stroke-linecap="round"/>
+                    <!-- HAC arc (gold) -->
+                    <path d="M334 91A160 160 0 0 1 334 409" fill="none" stroke="#BA7517" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="320" cy="90" r="3" fill="#D8E5E2"/><circle cx="320" cy="410" r="3" fill="#D8E5E2"/>
+                    <text x="150" y="247" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="end" fill="#1D9E75">CHIP</text>
+                    <text x="150" y="262" font-family="'Source Sans 3',sans-serif" font-size="12" text-anchor="end" fill="#888">technology platform</text>
+                    <text x="490" y="247" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="start" fill="#BA7517">HAC</text>
+                    <text x="490" y="262" font-family="'Source Sans 3',sans-serif" font-size="12" text-anchor="start" fill="#888">health action center</text>
+                    <!-- Flow arcs -->
+                    <path d="M197 291A130 130 0 0 1 294 123" fill="none" stroke="#0F6E56" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+                    <path d="M346 123A130 130 0 0 1 443 291" fill="none" stroke="#C0392B" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+                    <path d="M417 336A130 130 0 0 1 223 336" fill="none" stroke="#2B6CB0" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+                    <!-- Animated dots -->
+                    <circle r="4" fill="#0F6E56" opacity=".85"><animateMotion dur="4s" repeatCount="indefinite" begin="0s" path="M207 315A130 130 0 0 1 320 120A130 130 0 0 1 433 315A130 130 0 0 1 207 315"/></circle>
+                    <circle r="4" fill="#C0392B" opacity=".85"><animateMotion dur="4s" repeatCount="indefinite" begin="-1.33s" path="M207 315A130 130 0 0 1 320 120A130 130 0 0 1 433 315A130 130 0 0 1 207 315"/></circle>
+                    <circle r="4" fill="#2B6CB0" opacity=".85"><animateMotion dur="4s" repeatCount="indefinite" begin="-2.66s" path="M207 315A130 130 0 0 1 320 120A130 130 0 0 1 433 315A130 130 0 0 1 207 315"/></circle>
+                    <!-- Center -->
+                    <circle cx="320" cy="250" r="52" fill="#F0F6F4" stroke="#D8E5E2" stroke-width=".5"/>
+                    <text x="320" y="250" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1A1A1A">Beneficiary</text>
+                    <!-- Node D (green) -->
+                    <g onclick="diaClick('D')" style="cursor:pointer"><circle cx="207" cy="315" r="30" fill="#0F6E56" opacity=".1"/><circle id="nfD" cx="207" cy="315" r="24" fill="#0F6E56" style="transition:fill .2s"/><text x="207" y="315" font-family="'Playfair Display',serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="white" style="pointer-events:none">D</text></g>
+                    <text id="nlD" x="168" y="339" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="end" fill="#555" style="pointer-events:none">Data</text>
+                    <!-- Node I (red) -->
+                    <g onclick="diaClick('I')" style="cursor:pointer"><circle cx="320" cy="120" r="30" fill="#C0392B" opacity=".1"/><circle id="nfI" cx="320" cy="120" r="24" fill="#C0392B" style="transition:fill .2s"/><text x="320" y="120" font-family="'Playfair Display',serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="white" style="pointer-events:none">I</text></g>
+                    <text id="nlI" x="320" y="76" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#555" style="pointer-events:none">Insights</text>
+                    <!-- Node A (blue) -->
+                    <g onclick="diaClick('A')" style="cursor:pointer"><circle cx="433" cy="315" r="30" fill="#2B6CB0" opacity=".1"/><circle id="nfA" cx="433" cy="315" r="24" fill="#2B6CB0" style="transition:fill .2s"/><text x="433" y="315" font-family="'Playfair Display',serif" font-size="20" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="white" style="pointer-events:none">A</text></g>
+                    <text id="nlA" x="472" y="339" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="start" fill="#555" style="pointer-events:none">Action</text>
+                </svg></div>
+            <div class="dia-info">
+                <div class="dia-hint" id="dia-hint"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1"/><line x1="8" y1="5.5" x2="8" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".8" fill="currentColor"/></svg> Click D, I, or A to explore each stage</div>
+                <div class="dia-det" id="ddD"><p class="dia-det-ey">Data · via CHIP</p><h3 class="dia-det-t">Building the population-level foundation</h3><p class="dia-det-b">CHIP anchors data collection in a digital health census — a structured enumeration of every household. This live registry, combined with data from legacy government platforms, hospitals, WhatsApp channels, and remote sensing, creates the population denominators that make all targeting possible.</p><div class="dia-sts"><div><div class="sn">60M+</div><div class="sl">People tracked</div></div><div><div class="sn">85K+</div><div class="sl">Health workers</div></div><div><div class="sn">11</div><div class="sl">Govt integrations</div></div></div></div>
+                <div class="dia-det" id="ddI"><p class="dia-det-ey">Insights · CHIP → HAC</p><h3 class="dia-det-t">From data to decision-grade intelligence</h3><p class="dia-det-b">Integrated, AI-powered, GIS-enabled dashboards enable review of 70+ indicators across programs, with drill-down to the village level — across social vulnerability, environmental exposure, healthcare access, disease burden, resource availability, and partner activity.</p><div class="dia-sts"><div><div class="sn" style="color:var(--ic)">600+</div><div class="sl">Officials on CHIP</div></div><div><div class="sn" style="color:var(--ic)">70+</div><div class="sl">Key indicators</div></div></div></div>
+                <div class="dia-det" id="ddA"><p class="dia-det-ey">Action · via HAC</p><h3 class="dia-det-t">Closing the loop back to the community</h3><p class="dia-det-b">HACs coordinate a precision public health response — through policy changes, program redesigns, call center follow-up, field visits, and care escalations. CHIP facilitates actions at scale by scheduling interventions and tracking progress. TeleHAC extends reach through AI-augmented community outreach.</p><div class="dia-sts"><div><div class="sn" style="color:var(--ac)">1,000+</div><div class="sl">Weekly care calls</div></div><div><div class="sn" style="color:var(--ac)">100+</div><div class="sl">Weekly home visits</div></div><div><div class="sn" style="color:var(--ac)">70%</div><div class="sl">High-risk follow-up</div></div></div></div>
+            </div></div>
+        <div style="text-align:center;margin-top:28px"><a class="btn btn-o" onclick="go('model')">Learn about our full operating model →</a></div>
+    </div></section>
+
+    <!-- Areas of Impact -->
+    <section class="s s-b"><div class="w">
+        <div style="text-align:center;margin-bottom:20px"><div class="ey">Areas of Impact</div><h2 class="sh">Where the loop is <em>closing</em></h2></div>
+        <div class="dia-legend" style="justify-content:center"><div class="dia-legend-i"><span class="dot dot-d"></span> Data</div><div class="dia-legend-i"><span class="dot dot-i"></span> Insights</div><div class="dia-legend-i"><span class="dot dot-a"></span> Action</div></div>
+        <div class="g3">
+            <div class="sc"><div class="sc-b"><div class="sc-tg">Tuberculosis · Rajasthan</div><h3>Targeted surveillance across 40M people</h3><p>A <span class="ud">CHIP census</span> identified 10M vulnerable people. <span class="ui">Analysis</span> revealed underreporting. A <span class="ua">targeted strategy</span> — adopted nationally — transformed detection.</p><div class="sc-m"><div><div class="mn">8×</div><div class="ml">Detection rate</div></div><div><div class="mn">40K+</div><div class="ml">Suspects / cycle</div></div></div></div></div>
+            <div class="sc"><div class="sc-b"><div class="sc-tg">Child Nutrition · Maharashtra</div><h3>Bridging the treatment gap</h3><p><span class="ud">NURTURE linked</span> identification with treatment. <span class="ui">Dashboards surfaced</span> dropouts. <span class="ua">Supervisors drove</span> referral completion statewide.</p><div class="sc-m"><div><div class="mn">72K</div><div class="ml">SAM assessed</div></div><div><div class="mn">60%</div><div class="ml">Referral completion</div></div></div></div></div>
+            <div class="sc"><div class="sc-b"><div class="sc-tg">Maternal Health · Nandurbar</div><h3>A replicable command center</h3><p><span class="ud">90% digital census</span> and <span class="ui">40+ datasets</span> power <span class="ua">daily call center follow-up</span> for high-risk mothers.</p><div class="sc-m"><div><div class="mn">70%</div><div class="ml">Follow-up rate</div></div><div><div class="mn">4.5K+</div><div class="ml">Outreach calls</div></div></div></div></div>
+        </div>
+        <div style="text-align:center;margin-top:28px"><a class="btn btn-o" onclick="go('impact')">See all impact areas →</a></div>
+    </div></section>
+
+    <!-- Team teaser -->
+    <section class="s s-a s-b"><div class="w"><div class="g2">
+        <div class="g2-l ft"><h2>Built to drive <em>systemic change</em></h2>
+            <p>We run a 120-member in-house multidisciplinary team of tech, data science, programs, policy, and implementation — working across every level of the health system from state secretariat to village.</p>
+            <p>Our team speaks to or visits 100–500 community health workers every day. 250,000+ hours in the field. We believe <strong>technology + team + tradition</strong> is the formula for impact at scale.</p>
+            <a class="lk" onclick="go('about','team')">Meet our team →</a>
+        </div><div class="g2-r ph" style="background:var(--hac-bg)">Photograph: KB team photo — interdisciplinary team in the field</div>
+    </div></div></section>
+
+    <!-- What's next -->
+    <section class="s s-g"><div class="w">
+        <div style="text-align:center;margin-bottom:36px"><h2 style="font-family:var(--sf);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:500;color:var(--w)">The next decade: scaling <em style="color:#C8871A">deep</em></h2><p style="font-size:.9rem;color:rgba(255,255,255,.55);max-width:520px;margin:10px auto 0">Compounding what works through depth, breadth, and replication.</p></div>
+        <div class="g3">
+            <div class="scale-cd"><h4>Scale <span>deep</span></h4><p>Close referral loops within active DIA engagements. Every care cascade tracked to outcomes.</p></div>
+            <div class="scale-cd"><h4>Scale <span>wide</span></h4><p>Open-source CHIP, data models, and tools as digital public goods for local contexts.</p></div>
+            <div class="scale-cd"><h4>Scale <span>up</span></h4><p>Replicate HAC playbooks in aspirational districts and state digital health roadmaps.</p></div>
+        </div></div></section>
+
+    <!-- Testimonial + Press -->
+    <section class="s testi s-a s-b"><div class="w">
+        <blockquote>"Khushi Baby has tested, scaled up a model which is fantastic. They haven't tried to push a digital solution in. They have tried to solve a real problem by using digital."</blockquote>
+        <cite><strong>Neeraj Jain</strong><span>Country Director India, PATH</span></cite>
+    </div></section>
+    <section class="s s-b" style="padding:40px 0"><div class="w">
+        <div style="text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--t5);margin-bottom:16px">Recognition</div>
+        <div class="feat-r"><span>Forbes 30 Under 30</span><span>MIT Solve</span><span>GAVI</span><span>HP Digital Equity</span><span>McGovern AI Prize</span><span>PATH</span><span>UNICEF</span></div>
+    </div></section>
+</div>
+
+<!-- ██████ ABOUT ██████ -->
+<div class="pg" id="pg-about">
+    <div class="hb"><div class="bg" style="background-image:url('https://cdn.prod.website-files.com/665fe4f280c6b2f1935e282a/676a99598eee0e55bcf6b947_frontline%20workers%20new%20(1)%20(1)%20(1)%20(1).jpg')"></div><div class="ov"></div>
+        <div class="hc"><h1>Who <em>we</em> are</h1><p class="hs">We believe, with unshakable conviction, in the power of data-driven public health systems to save lives at the last mile.</p></div></div>
+
+    <section class="s s-b" id="about-story"><div class="w"><div class="g2">
+        <div class="g2-l ph">Photograph: The original NFC necklace on a child in Udaipur, circa 2015</div>
+        <div class="g2-r ft"><h2>Born in the field. Built for <em>systems change</em>.</h2>
+            <p>Khushi Baby began in 2014 with a question posed in a Yale engineering classroom: how do you close the immunization gap for families at the last mile? The first answer was a small NFC necklace replacing the traditional thread mothers in Udaipur already trusted — carrying a digital health record.</p>
+            <p>A decade of field research, rigorous trials, and hard-won government trust later, we operate one of the largest platforms for community health workers in the world — now spanning all primary health care verticals from maternal health to tuberculosis, immunization to nutrition, and climate adaptation.</p>
+            <p>Our next phase focuses on completing care coordination loops — closing the gap between identification and treatment across every health program — and sharing what works as open playbooks for the public health ecosystem.</p>
+            <div class="vid"><iframe src="https://www.youtube.com/embed/u5oyZb2HteY" allowfullscreen loading="lazy"></iframe></div>
+        </div></div></div></section>
+
+    <section class="s s-a s-b" id="about-mission"><div class="w"><div class="g2 rv">
+        <div class="g2-l ph">Photograph: CHIP dashboard review with state officials</div>
+        <div class="g2-r ft"><h2>Our <em>mission</em></h2><p>Strengthen public health systems by closing the gap between data collection and coordinated care — ensuring every person identified as high-risk receives timely follow-up, referral, and treatment.</p>
+            <h2 style="margin-top:32px">Our <em>vision</em></h2><p>A public health system where data is collected once, shared appropriately across programs, and used continuously to drive care for the most vulnerable.</p>
+        </div></div></div></section>
+
+    <section class="s s-b" id="about-team"><div class="w">
+        <div style="text-align:center;margin-bottom:36px"><div class="ey">Our Team</div><h2 class="sh">An interdisciplinary team is our <em>secret weapon</em></h2><p class="sp" style="margin:0 auto">120 members across public health, design, engineering, data science, and field implementation — many hired from the communities they serve. 250,000+ hours co-designing with health workers.</p></div>
+        <div class="team-g">
+            <div class="tc"><div class="tc-i"></div><h4>Ruchit Nagar</h4><p>CEO & Co-Founder</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Md. Shahnawaz</h4><p>COO & Co-Founder</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Huzaifa Bilal</h4><p>Country Lead, HSS</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Mohammad S. Ambiya</h4><p>Chief Data Scientist</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Saachi Dalal</h4><p>Research & Strategy</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Pavan Singh Bhadauria</h4><p>Product Lead</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Hamid Abdullah</h4><p>Field Implementation Lead</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Vijendra Banshiwal</h4><p>Technical Program Lead</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Pooja Bhather</h4><p>Lead Data Engineer</p></div>
+            <div class="tc"><div class="tc-i"></div><h4>Afreen Begum</h4><p>Data Scientist</p></div>
+        </div></div></section>
+
+    <section class="s s-a s-b"><div class="w"><div class="ct">
+        <h2>We go to the field before we draw conclusions, measure obsessively because instinct alone isn't enough, and have learned to go <em>far together</em> rather than fast alone.</h2>
+    </div></div></section>
+
+    <section class="s s-b"><div class="w" style="text-align:center">
+        <h2 class="sh">We're hiring specialists deeply invested in strengthening public health in <em>India</em></h2>
+        <p class="sp" style="margin:8px auto 20px;text-align:center">Certified as a Great Place to Work. Explore open roles across engineering, data science, public health, field implementation, and design.</p>
+        <!-- Embedded careers iframe -->
+        <div style="border:1px solid var(--bd);border-radius:8px;overflow:hidden;max-width:800px;margin:0 auto">
+            <iframe src="https://www.khushibaby.org/ui-elements/career-html" style="width:100%;height:500px;border:none" loading="lazy" title="Khushi Baby Careers"></iframe>
+        </div>
+    </div></section>
+
+    <section class="s s-a s-b" id="about-partners"><div class="w">
+        <div style="text-align:center;margin-bottom:24px"><div class="ey">Partners</div></div>
+        <div style="text-align:center;margin-bottom:12px"><h4 style="font-size:.8rem;font-weight:600;color:var(--t2)">Government Partners</h4></div>
+        <div class="part-g" style="margin-bottom:28px"><div class="pi">Govt. of Rajasthan</div><div class="pi">Govt. of Maharashtra</div><div class="pi">Govt. of Karnataka</div></div>
+        <div style="text-align:center;margin-bottom:12px"><h4 style="font-size:.8rem;font-weight:600;color:var(--t2)">Research & Development</h4></div>
+        <div class="part-g" style="margin-bottom:28px"><div class="pi">Microsoft Research</div><div class="pi">Google Health</div><div class="pi">Yale School of Public Health</div><div class="pi">IIT Bombay</div><div class="pi">J-PAL</div><div class="pi">CHIC</div><div class="pi">ARMMAN</div><div class="pi">PATH</div></div>
+        <div style="text-align:center;margin-bottom:12px"><h4 style="font-size:.8rem;font-weight:600;color:var(--t2)">Funding Partners</h4></div>
+        <div class="part-g"><div class="pi">Infosys Foundation</div><div class="pi">ACT Grants</div><div class="pi">ARM</div><div class="pi">GAVI</div><div class="pi">Johnson & Johnson</div><div class="pi">UNICEF</div><div class="pi">Patrick J. McGovern Fdn</div><div class="pi">India Health Foundation</div><div class="pi">Skoll</div><div class="pi">Trinity Challenge</div><div class="pi">Google.org</div></div>
+    </div></section>
+
+    <section class="s" id="about-reports"><div class="w">
+        <div style="text-align:center;margin-bottom:24px"><div class="ey">Reports & Financials</div></div>
+        <div class="g3" style="max-width:800px;margin:0 auto">
+            <div class="cd cg" style="text-align:center"><h3>Annual Reports</h3><p>Progress, financials, and learnings.</p><div class="btns" style="justify-content:center;margin-top:12px"><a class="btn btn-o" style="font-size:.82rem;padding:10px 18px">Download</a></div></div>
+            <div class="cd cg" style="text-align:center"><h3>Research</h3><p>Studies, evaluations, policy briefs.</p><div class="btns" style="justify-content:center;margin-top:12px"><a class="btn btn-o" style="font-size:.82rem;padding:10px 18px">View</a></div></div>
+            <div class="cd cg" style="text-align:center"><h3>Financials</h3><p>Audited statements and filings.</p><div class="btns" style="justify-content:center;margin-top:12px"><a class="btn btn-o" style="font-size:.82rem;padding:10px 18px">View</a></div></div>
+        </div></div></section>
+</div>
+
+<!-- ██████ MODEL ██████ -->
+<div class="pg" id="pg-model">
+
+    <!-- Hero -->
+    <div class="hb"><div class="bg" style="background-image:url('https://cdn.prod.website-files.com/665fe4f280c6b2f1935e282a/676a99570de6f209b14c2ae5_navratan%20impact-1.jpg')"></div><div class="ov"></div>
+        <div class="hc"><h1>Data driving care to the most <em>vulnerable</em></h1><p class="hs">Khushi Baby strengthens public health systems by closing the gap between data, insights, and action — particularly at the last mile of service delivery.</p></div></div>
+
+    <!-- Tagline + description -->
+    <section class="s s-g s-b" id="model-dia"><div class="w">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start">
+            <div>
+                <h2 style="font-family:var(--sf);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:500;color:var(--w);line-height:1.3;margin-bottom:16px">Converting data to action for public health departments</h2>
+                <p style="font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:12px">Khushi Baby operates as a technical partner to ministries of health — working in a build-operate-transfer model that scales through existing government systems rather than building new ones alongside them.</p>
+                <p style="font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:12px">This keeps operating costs low, builds local ownership at every level of government, and produces a model that the state can adopt, fund, and run independently.</p>
+                <p style="font-size:.92rem;color:rgba(255,255,255,.7);line-height:1.8">Our growth follows government demand, unmet need, and invitation from partners already working in a geography. Where we operate, we aim to go deeper before we go wider.</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+                <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:14px 18px"><p style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px">Approach</p><p style="font-size:.88rem;font-weight:500;color:var(--w)">Build · Operate · Transfer</p></div>
+                <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:14px 18px"><p style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px">Partners</p><p style="font-size:.88rem;font-weight:500;color:var(--w)">State and national ministries of health</p></div>
+                <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:14px 18px"><p style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px">Framework</p><p style="font-size:.88rem;font-weight:500;color:var(--w)">Data · Insights · Action</p></div>
+                <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:14px 18px"><p style="font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:3px">Presence</p><p style="font-size:.88rem;font-weight:500;color:var(--w)">Rajasthan · Maharashtra · Karnataka</p></div>
+            </div>
+        </div>
+    </div></section>
+
+    <!-- DIA Loop — simplified, no CHIP/HAC arcs -->
+    <section class="s s-a s-b"><div class="w">
+        <div style="text-align:center;margin-bottom:8px"><div class="ey">Our Operating Model</div><h2 class="sh">A new public health <em>operating system</em></h2></div>
+        <div class="dia-legend" style="justify-content:center;margin:16px 0 24px">
+            <div class="dia-legend-i"><span class="dot dot-d"></span> Data</div>
+            <div class="dia-legend-i"><span class="dot dot-i"></span> Insights</div>
+            <div class="dia-legend-i"><span class="dot dot-a"></span> Action</div>
+        </div>
+        <div class="dia-box">
+            <div class="dia-svg-w">
+                <!-- Simplified DIA loop: just D-I-A nodes, connecting arcs, animated dots, community at center -->
+                <svg viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg">
+                    <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+                    <!-- Connecting arcs between nodes -->
+                    <path d="M197 291A130 130 0 0 1 294 123" fill="none" stroke="#0F6E56" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ar2)"/>
+                    <path d="M346 123A130 130 0 0 1 443 291" fill="none" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ar2)"/>
+                    <path d="M417 336A130 130 0 0 1 223 336" fill="none" stroke="#2B6CB0" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ar2)"/>
+                    <!-- Animated dots cycling through the loop -->
+                    <circle r="5" fill="#0F6E56" opacity=".8"><animateMotion dur="4.5s" repeatCount="indefinite" begin="0s" path="M207 315A130 130 0 0 1 320 120A130 130 0 0 1 433 315A130 130 0 0 1 207 315"/></circle>
+                    <circle r="5" fill="#C0392B" opacity=".8"><animateMotion dur="4.5s" repeatCount="indefinite" begin="-1.5s" path="M207 315A130 130 0 0 1 320 120A130 130 0 0 1 433 315A130 130 0 0 1 207 315"/></circle>
+                    <circle r="5" fill="#2B6CB0" opacity=".8"><animateMotion dur="4.5s" repeatCount="indefinite" begin="-3s" path="M207 315A130 130 0 0 1 320 120A130 130 0 0 1 433 315A130 130 0 0 1 207 315"/></circle>
+                    <!-- Center: Community -->
+                    <circle cx="320" cy="235" r="52" fill="#F0F6F4" stroke="#D8E5E2" stroke-width="1"/>
+                    <text x="320" y="233" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="middle" dominant-baseline="central" fill="#1A1A1A">Community</text>
+                    <text x="320" y="250" font-family="'Source Sans 3',sans-serif" font-size="10" text-anchor="middle" fill="#888">at center</text>
+                    <!-- Node D (green) -->
+                    <g onclick="diaClick('D')" style="cursor:pointer">
+                        <circle cx="207" cy="315" r="30" fill="#0F6E56" opacity=".08"/>
+                        <circle id="nfD2" cx="207" cy="315" r="26" fill="#0F6E56" style="transition:fill .2s"/>
+                        <text x="207" y="315" font-family="'Playfair Display',serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="white" style="pointer-events:none">D</text>
+                    </g>
+                    <text id="nlD2" x="162" y="350" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="end" fill="#555" style="pointer-events:none">Data</text>
+                    <!-- Node I (red) -->
+                    <g onclick="diaClick('I')" style="cursor:pointer">
+                        <circle cx="320" cy="105" r="30" fill="#C0392B" opacity=".08"/>
+                        <circle id="nfI2" cx="320" cy="105" r="26" fill="#C0392B" style="transition:fill .2s"/>
+                        <text x="320" y="105" font-family="'Playfair Display',serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="white" style="pointer-events:none">I</text>
+                    </g>
+                    <text id="nlI2" x="320" y="62" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="middle" fill="#555" style="pointer-events:none">Insights</text>
+                    <!-- Node A (blue) -->
+                    <g onclick="diaClick('A')" style="cursor:pointer">
+                        <circle cx="433" cy="315" r="30" fill="#2B6CB0" opacity=".08"/>
+                        <circle id="nfA2" cx="433" cy="315" r="26" fill="#2B6CB0" style="transition:fill .2s"/>
+                        <text x="433" y="315" font-family="'Playfair Display',serif" font-size="22" font-weight="700" text-anchor="middle" dominant-baseline="central" fill="white" style="pointer-events:none">A</text>
+                    </g>
+                    <text id="nlA2" x="478" y="350" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="500" text-anchor="start" fill="#555" style="pointer-events:none">Action</text>
+                </svg>
+            </div>
+            <div class="dia-info"><div class="dia-hint" id="dia-hint2"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1"/><line x1="8" y1="5.5" x2="8" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11.5" r=".8" fill="currentColor"/></svg> Click D, I, or A to explore each stage</div>
+                <div class="dia-det" id="ddD2"><p class="dia-det-ey" style="color:var(--dc)">Data</p><h3 class="dia-det-t">High-quality data, collected once, connected across systems</h3><p class="dia-det-b">Our digital platforms make data collection simple and free of duplication for frontline health workers. Information captured on the ground is consolidated and made visible to the right stakeholders in the system.</p></div>
+                <div class="dia-det" id="ddI2"><p class="dia-det-ey" style="color:var(--ic)">Insights</p><h3 class="dia-det-t">Decision-grade intelligence at every level</h3><p class="dia-det-b">Our analytical infrastructure converts raw data into clear, decision-ready insights — presented in ways that make action straightforward for everyone in the system, from village health worker to chief minister.</p></div>
+                <div class="dia-det" id="ddA2"><p class="dia-det-ey" style="color:var(--ac)">Action</p><h3 class="dia-det-t">Coordinated response that closes the loop</h3><p class="dia-det-b">Our embedded teams enable data-driven decisions and improved health services — translating insights into follow-up calls, home visits, care escalations, policy changes, and resource reallocation at the last mile.</p></div>
+            </div>
+        </div>
+        <p style="text-align:center;font-size:.88rem;color:var(--t3);max-width:600px;margin:24px auto 0">By working across Data, Insights, and Action, the model produces something no single platform can: <strong style="color:var(--t)">a system that learns</strong>.</p>
+    </div></section>
+
+    <!-- How We Engage: 5 steps -->
+    <section class="s s-b" id="model-engage"><div class="w">
+        <div style="text-align:center;margin-bottom:8px"><div class="ey">How We Engage</div><h2 class="sh">From ground-level understanding to <em>systems-level</em> change</h2></div>
+        <div class="msteps">
+            <div class="mst"><div class="mst-n">1</div><div class="mst-t">Identify champion & partners</div><div class="mst-d">Establish unit with health dept.</div></div>
+            <div class="mst"><div class="mst-n">2</div><div class="mst-t">Understand the felt need</div><div class="mst-d">Which care cascade is breaking?</div></div>
+            <div class="mst"><div class="mst-n">3</div><div class="mst-t">DIA gap analysis</div><div class="mst-d">Diagnose the compromised layer</div></div>
+            <div class="mst"><div class="mst-n">4</div><div class="mst-t">Co-design & implement</div><div class="mst-d">Deploy platform + process, set goals</div></div>
+            <div class="mst"><div class="mst-n">5</div><div class="mst-t">Review & iterate</div><div class="mst-d">Assess, adapt, document playbooks</div></div>
+        </div>
+    </div></section>
+
+    <!-- Process cards with CHIP and HAC callouts -->
+    <section class="s s-a s-b"><div class="w">
+        <div class="g2" style="margin-bottom:56px"><div class="g2-l ph">Photograph: Field scoping — KB team meeting with district leadership and community health workers</div>
+            <div class="g2-r ft"><p class="ey" style="margin-bottom:8px">Start from the ground</p><h2>Understand the felt need before reaching for the <em>technology</em></h2>
+                <p>Every deployment begins by sitting with health leadership to identify the most pressing priority — whether maternal mortality, child malnutrition, TB, or immunisation gaps. We establish a baseline, identify where the care cascade breaks, and define what closing the loop looks like here.</p>
+                <p>This is not a rapid assessment. It takes field visits and co-design with community health workers — who understand barriers to care that no dashboard will ever surface on its own.</p>
+                <div style="background:var(--hac-bg);border:1px solid rgba(186,117,23,.15);border-radius:6px;padding:14px 18px;margin-top:14px"><p style="font-size:.84rem;font-style:italic;color:var(--t2);margin:0">A solution designed for a problem we don't fully understand will be used once, then abandoned. We have spent 250,000 hours in the field to earn the right to build something that lasts.</p></div>
+            </div></div>
+
+        <div class="g2 rv" style="margin-bottom:56px"><div class="g2-l ph">Photograph: CHW using CHIP during household census in a tribal village</div>
+            <div class="g2-r ft"><p class="ey" style="margin-bottom:8px">The data foundation</p><h2>Conduct a digital health census at the <em>village level</em></h2>
+                <p>Community health workers use CHIP to enumerate every household — establishing a live registry of named, located individuals that every health program can track over time. This is the substrate on which all insights and actions depend. Without it, targeting is directional at best.</p>
+                <p>The census maps multi-dimensional vulnerability — social, economic, geographic, and health — and integrates with national platforms so data collected once flows across programs.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+                    <div style="background:var(--w);border:1px solid var(--bd);border-radius:6px;padding:10px 14px"><div style="font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--dc)">60M+</div><div style="font-size:.7rem;color:var(--t4)">People in registry</div></div>
+                    <div style="background:var(--w);border:1px solid var(--bd);border-radius:6px;padding:10px 14px"><div style="font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--dc)">40K+</div><div style="font-size:.7rem;color:var(--t4)">Villages covered</div></div>
+                    <div style="background:var(--w);border:1px solid var(--bd);border-radius:6px;padding:10px 14px"><div style="font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--dc)">11</div><div style="font-size:.7rem;color:var(--t4)">Govt integrations</div></div>
+                </div>
+                <a class="btn btn-g" onclick="go('chip')" style="margin-top:18px;font-size:.82rem;padding:10px 20px">Explore CHIP platform →</a>
+            </div></div>
+
+        <div class="g2" style="margin-bottom:56px"><div class="g2-l ph">Screenshot: CHIP dashboard — geospatial hotspot map, triage lists, state-level review</div>
+            <div class="g2-r ft"><p class="ey" style="margin-bottom:8px">Decision-grade insights</p><h2>Surface what matters at <em>every level</em> of the system</h2>
+                <p>Raw data becomes actionable through AI and GIS dashboards that show where high-risk populations are concentrated, where referral loops are breaking, and which individuals need follow-up before their window closes.</p>
+                <p>Insights flow to officials at block, district, and state level — including chief minister offices — and are directly linked to action scheduling.</p>
+                <div style="background:var(--dbg);border:1px solid rgba(15,110,86,.15);border-radius:6px;padding:14px 18px;margin-top:14px"><p style="font-size:.84rem;font-style:italic;color:var(--t2);margin:0">A district official who can see — at 9am — exactly which 40 mothers need a follow-up call today, and assign it before the day begins, is working inside a fundamentally different kind of public health system.</p></div>
+            </div></div>
+
+        <div class="g2 rv"><div class="g2-l ph">Photograph: HAC call center operators and field team in Nandurbar</div>
+            <div class="g2-r ft"><p class="ey" style="margin-bottom:8px;color:var(--hac)">Health Action Centers</p><h2>Activate an embedded action unit where need is <em>deepest</em></h2>
+                <p>In aspirational districts, Khushi Baby co-establishes a Health Action Center with the health department. A lean interdisciplinary unit coordinates care escalations, referral follow-ups, and daily outreach that would otherwise fall through the cracks — tracked, acted on, and measured.</p>
+                <p>The HAC does not replace government health workers. It coordinates them.</p>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+                    <div style="background:var(--w);border:1px solid var(--bd);border-radius:6px;padding:10px 14px"><div style="font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--hac)">70%</div><div style="font-size:.7rem;color:var(--t4)">Daily follow-up rate</div></div>
+                    <div style="background:var(--w);border:1px solid var(--bd);border-radius:6px;padding:10px 14px"><div style="font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--hac)">4,400+</div><div style="font-size:.7rem;color:var(--t4)">Home visits (2025)</div></div>
+                    <div style="background:var(--w);border:1px solid var(--bd);border-radius:6px;padding:10px 14px"><div style="font-family:var(--sf);font-size:1.3rem;font-weight:700;color:var(--hac)">220+</div><div style="font-size:.7rem;color:var(--t4)">Care escalations</div></div>
+                </div>
+                <a class="btn" onclick="go('model','nandurbar')" style="margin-top:18px;font-size:.82rem;padding:10px 20px;background:var(--hac);color:var(--w)">See the Nandurbar example →</a>
+            </div></div>
+    </div></section>
+
+    <!-- Nandurbar HAC Example -->
+    <section class="s s-b" id="model-nandurbar"><div class="w">
+        <div style="text-align:center;margin-bottom:40px">
+            <div class="ey">The DIA Loop in Practice</div>
+            <h2 class="sh">Nandurbar Health Action Center</h2>
+            <p class="sp" style="margin:0 auto">A district-owned command center that turns routine health data into real-time action — ensuring no high-risk mother or child falls through the cracks.</p>
+        </div>
+
+        <!-- Context with image placeholder -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center;margin-bottom:48px">
+            <div>
+                <div style="background:var(--hac-bg);border:1px solid rgba(186,117,23,.15);border-radius:8px;padding:28px 32px">
+                    <p style="font-family:var(--sf);font-size:1.05rem;font-style:italic;color:var(--t);line-height:1.6;margin-bottom:12px">"She had carried her pregnancy entirely alone — no checkup, no contact, no record in any system. She existed, but the system could not yet see her."</p>
+                    <p style="font-size:.85rem;color:var(--t3);line-height:1.7">Nandurbar sits in northwestern Maharashtra — dense forests, hilly terrain, deeply rooted tribal communities. 69% Scheduled Tribe population. One of India's 112 Aspirational Districts. Maternal mortality 4× the state average.</p>
+                </div></div>
+            <!-- CHIP dashboard map placeholder -->
+            <div style="border-radius:8px;overflow:hidden;aspect-ratio:4/3;background:linear-gradient(135deg,#E1F5EE 0%,#FDF6EC 100%);border:1.5px dashed var(--bd);display:flex;align-items:center;justify-content:center;padding:32px">
+                <div style="text-align:center">
+                    <div style="font-size:2rem;margin-bottom:12px;opacity:.4">🗺️</div>
+                    <p style="font-size:.85rem;font-weight:600;color:var(--t2);margin-bottom:8px">CHIP Dashboard: Nandurbar District</p>
+                    <p style="font-size:.78rem;color:var(--t4);line-height:1.6;max-width:280px;margin:0 auto">Village-level maternal health hotspot map with multi-dimensional vulnerability layers across 6 blocks</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIA applied: 3 colored panels -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:48px">
+            <div style="background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:28px 24px;border-top:4px solid var(--dc)">
+                <div style="font-family:var(--sf);font-size:1.6rem;font-weight:700;color:var(--dc);margin-bottom:6px">D</div>
+                <h4 style="font-size:.92rem;font-weight:600;color:var(--t);margin-bottom:10px">Gather missing data, establish denominators</h4>
+                <p style="font-size:.82rem;line-height:1.7;color:var(--t3)">CHIP census surveys 87.7% of 1.8M residents. 47+ datasets integrated: WhatsApp group intelligence, SNCU discharge lists, health worker nominations, ad hoc surveys. 2,085 ASHAs digitally enabled.</p>
+            </div>
+            <div style="background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:28px 24px;border-top:4px solid var(--ic)">
+                <div style="font-family:var(--sf);font-size:1.6rem;font-weight:700;color:var(--ic);margin-bottom:6px">I</div>
+                <h4 style="font-size:.92rem;font-weight:600;color:var(--t);margin-bottom:10px">Surface where the gaps are — in real time</h4>
+                <p style="font-size:.82rem;line-height:1.7;color:var(--t3)">Dashboard with 40+ layers identified 22 PHCs with zero reported high-risk pregnancies despite 1,591 estimated cases. Prioritized triage lists. Vulnerability maps shared with District Collector.</p>
+            </div>
+            <div style="background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:28px 24px;border-top:4px solid var(--ac)">
+                <div style="font-family:var(--sf);font-size:1.6rem;font-weight:700;color:var(--ac);margin-bottom:6px">A</div>
+                <h4 style="font-size:.92rem;font-weight:600;color:var(--t);margin-bottom:10px">Translate insights into coordinated action</h4>
+                <p style="font-size:.82rem;line-height:1.7;color:var(--t3)">Four call center operators follow up with 500+ highest-risk weekly. Field team coordinates home visits, transport, investigations. Weekly government reviews convert gaps into time-bound actions.</p>
+            </div>
+        </div>
+
+        <!-- Human story with photo -->
+        <div style="display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center;margin-bottom:40px;background:var(--dbg);border:1px solid rgba(15,110,86,.15);border-radius:8px;overflow:hidden">
+            <div style="height:100%;min-height:260px">
+                <img src="nhac_child_monitoring.jpeg" alt="Health workers monitoring child weight in Nandurbar" style="width:100%;height:100%;object-fit:cover">
+            </div>
+            <div style="padding:24px 28px 24px 0">
+                <p style="font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dc);margin-bottom:10px">The loop closing — March 2026</p>
+                <p style="font-size:.9rem;line-height:1.8;color:var(--t2)">HAC Associates identified 3 high-risk newborns in Akkalkuwa, Dhadgaon, and Taloda blocks who had not received mandated home-based newborn care visits. Through 1–2 targeted follow-ups and coordination with frontline workers, all three were converted to compliance. Two low-birth-weight children showed significant weight gain. In one case, the child's weight was recorded for the first time since birth.</p>
+                <p style="font-size:.84rem;font-style:italic;color:var(--dc);margin-top:10px">This is what data → insight → action looks like for one family.</p>
+            </div>
+        </div>
+
+        <!-- Stats + testimonial -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px">
+            <div class="sti"><div class="sn">87.7%</div><div class="sl">Population surveyed</div></div>
+            <div class="sti"><div class="sn">2,085</div><div class="sl">ASHAs enabled</div></div>
+            <div class="sti"><div class="sn">70%</div><div class="sl">Daily follow-up</div></div>
+            <div class="sti"><div class="sn">₹1.4Cr</div><div class="sl">Public co-investment</div></div>
+        </div>
+        <div class="testi" style="padding:24px 0"><blockquote style="font-size:1.05rem">"When I saw KB's work, I thought — this is what I've been talking about. If we could triage by hemoglobin, BP, weight, and then realise which high-risk cases should get 80% of attention — that changes everything."</blockquote><cite><strong>Dr. Mittali Sethi, IAS</strong><span>District Collector, Nandurbar</span></cite></div>
+        <p style="text-align:center;font-size:.88rem;color:var(--t3);max-width:580px;margin:12px auto 0">Nandurbar is the proof of concept — designed to replicate across India's 112 aspirational districts, reaching 250 million people. The ultimate goal: full government ownership by 2028.</p>
+    </div></section>
+
+    <!-- Beyond the HAC -->
+    <section class="s s-g" id="model-scale"><div class="w">
+        <div style="text-align:center;margin-bottom:32px"><div class="ey" style="color:rgba(255,255,255,.5)">Driving change beyond the HAC</div><h2 style="font-family:var(--sf);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:500;color:var(--w)">Partners, policy, and <em style="color:#C8871A">practice</em></h2><p style="font-size:.9rem;color:rgba(255,255,255,.55);max-width:560px;margin:10px auto 0">Closing the loop at the district level creates evidence and tools that travel further.</p></div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+            <div class="scale-cd"><h4><span>Deep</span></h4><p>Vertical innovations — smartphone diagnostics, LLM tools, AI triage — tested at scale within CHIP as government infrastructure.</p></div>
+            <div class="scale-cd"><h4><span>Evidence</span></h4><p>A continuously updated evidence base for public health interventions — shared with research partners, feeding back into operations.</p></div>
+            <div class="scale-cd"><h4><span>Policy</span></h4><p>CHIP data has shaped national TB strategy, Maharashtra's tribal health policy, and 15+ district climate-health action plans.</p></div>
+            <div class="scale-cd"><h4><span>Open</span></h4><p>Playbooks, datasets, and platform components open-sourced for partner NGOs and governments to build on.</p></div>
+        </div>
+        <div style="text-align:center;margin-top:28px"><div class="vid" style="max-width:560px;margin:0 auto"><iframe src="https://www.youtube.com/embed/vhpe1KSjWQs" allowfullscreen loading="lazy"></iframe></div></div>
+    </div></section>
+</div>
+
+<!-- ██████ CHIP DEEP DIVE ██████ -->
+<div class="pg" id="pg-chip">
+    <div class="hb"><div class="bg" style="background-color:#0A4F3D"></div><div class="ov" style="background:rgba(0,0,0,.1)"></div>
+        <div class="hc"><h1>The CHIP <em>Platform</em></h1><p class="hs">Community Health Integrated Platform — unified digital infrastructure for last-mile public health delivery.</p></div></div>
+
+    <section class="s s-b"><div class="w"><div class="g2">
+        <div class="g2-l ph">Screenshot: CHIP app showing household census flow</div>
+        <div class="g2-r ft"><h2>One platform. All <em>programs</em>.</h2>
+            <p>CHIP consolidates the entire work requirement of frontline health workers across all primary health care programs into a single interface — reducing 800+ fragmented indicators across 12 national programs. Validated through a 3,200-patient RCT and deployed across 85,000 health workers reaching 60 million people.</p></div>
+    </div></div></section>
+
+    <section class="s s-a s-b"><div class="w"><div class="g2 rv">
+        <div class="g2-l ph">Diagram: CHIP integration architecture</div>
+        <div class="g2-r ft"><h2>CHIP as an <em>integration layer</em></h2>
+            <p>Connected to 11 state and central government platforms — Ayushman Bharat, Poshan Tracker, Ni-kshay, and more. These integrations link a malnourished child identified in nutrition to their treatment in health. They allow TB surveillance to draw on a 40M-person census. Each integration unlocks new network effects.</p></div>
+    </div></div></section>
+
+    <section class="s s-b"><div class="w"><div class="g2">
+        <div class="g2-l ph">Screenshot: CHIP dashboard in use by officials</div>
+        <div class="g2-r ft"><h2>CHIP as a <em>measurement tool</em></h2>
+            <p>Enables partners to measure what works by observing real-time village-level data. Used to evaluate the CHO cadre roll-out in Rajasthan, inform the Maharashtra Tribal Health Report 2025, and plan new emergency health facility distribution. Powers India's first village-level climate-health vulnerability maps.</p></div>
+    </div></div></section>
+
+    <section class="s s-a"><div class="w">
+        <div style="margin-bottom:24px"><div class="ey">Frontier Innovations</div><h2 class="sh">Transforming health <em>practice</em></h2><p class="sp">Technologies tested at scale on the CHIP platform.</p></div>
+        <div class="inno-track">
+            <div class="inno-card"><h4>📱 MAHILA — Smartphone Diagnostics</h4><p>ML classifies anemia severity from conjunctiva images. Targeting certification as a software medical device by 2028.</p><div class="inno-stat">94% sensitivity · 100% specificity · 3,021 women</div></div>
+            <div class="inno-card"><h4>🌍 Climate Health Vulnerability Index</h4><p>India's first village-level CHVI with Google. Maps heat, vector-borne, and air-pollution vulnerability.</p><div class="inno-stat">40K+ villages · 15+ district plans informed</div></div>
+            <div class="inno-card"><h4>💬 AshaBot — Agents for Public Health</h4><p>WhatsApp-based vernacular health companion. Builds capacity and directs effort toward high-impact decisions.</p><div class="inno-stat">7,800 ASHAs · 70,000 questions in 2025</div></div>
+            <div class="inno-card"><h4>📞 TeleHAC</h4><p>AI-augmented call center: automated triage, structured counseling, quality monitoring at scale.</p><div class="inno-stat">Next-gen personalized public health outreach</div></div>
+        </div>
+        <div style="text-align:center;margin-top:28px"><a class="btn btn-o" onclick="go('model')">← Back to Operating Model</a></div>
+    </div></section>
+</div>
+
+<!-- ██████ IMPACT ██████ -->
+<div class="pg" id="pg-impact">
+    <div class="hb"><div class="bg" style="background-color:#0A4F3D"></div><div class="ov" style="background:rgba(0,0,0,.15)"></div>
+        <div class="hc"><h1>Our <em>impact</em></h1><p class="hs">We measure reach, quality, behavior, and health outcomes across every program area.</p></div></div>
+
+    <section class="s s-b" id="impact-glance"><div class="w">
+        <div style="text-align:center;margin-bottom:32px"><h2 class="sh">Impact at a <em>glance</em></h2></div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px">
+            <div class="sti"><div class="sn">85K+</div><div class="sl">Health workers</div></div>
+            <div class="sti"><div class="sn">60M+</div><div class="sl">People tracked</div></div>
+            <div class="sti"><div class="sn">40K+</div><div class="sl">Villages</div></div>
+            <div class="sti"><div class="sn">8×</div><div class="sl">TB detection ↑</div></div>
+            <div class="sti"><div class="sn">12%</div><div class="sl">Immunisation ↑</div></div>
+            <div class="sti"><div class="sn">70%</div><div class="sl">High-risk follow-up</div></div>
+        </div></div></section>
+
+    <section class="s s-a s-b" id="impact-map"><div class="w">
+        <div style="text-align:center;margin-bottom:28px"><div class="ey">Where We Work</div><h2 class="sh">Embedded across <em>three states</em></h2><p class="sp" style="margin:0 auto">Click a state to learn more.</p></div>
+        <div class="map-w">
+            <div class="map-svg-w">
+                <svg viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M200 30 Q210 25 230 20 Q260 15 280 20 Q310 28 330 45 Q345 60 355 80 Q360 95 370 105 Q385 115 395 130 Q405 150 400 170 Q395 185 385 195 Q380 200 378 210 Q375 225 380 240 Q385 250 390 260 Q395 275 400 290 Q405 310 395 330 Q385 340 375 355 Q365 370 350 385 Q335 395 320 410 Q310 420 300 435 Q290 450 275 465 Q265 475 255 490 Q245 500 235 505 Q220 512 210 505 Q205 498 200 485 Q195 470 190 455 Q180 440 175 425 Q168 410 160 400 Q150 390 145 375 Q140 360 138 345 Q135 330 130 315 Q125 300 120 285 Q115 270 112 255 Q108 240 110 225 Q112 210 118 195 Q122 180 130 170 Q140 160 148 148 Q155 135 160 120 Q163 108 168 95 Q172 82 178 70 Q185 55 192 42 Z" fill="#E8E5E0" stroke="#D5D0C8" stroke-width="1"/>
+                    <path class="map-st" onclick="showMap('rj')" d="M140 100 Q150 85 170 80 Q190 75 210 78 Q228 82 240 90 Q250 100 255 115 Q258 130 252 145 Q245 155 235 162 Q220 168 205 170 Q190 172 175 168 Q160 162 150 150 Q142 138 138 125 Q136 112 140 100 Z" fill="#1D9E75" stroke="white" stroke-width="2"/>
+                    <text x="195" y="132" font-family="var(--ss)" font-size="13" font-weight="600" fill="white" text-anchor="middle" pointer-events="none">Rajasthan</text>
+                    <path class="map-st" onclick="showMap('mh')" d="M155 255 Q170 245 190 240 Q210 236 230 238 Q250 240 268 248 Q282 258 290 272 Q295 288 288 302 Q278 315 265 322 Q248 328 230 330 Q210 330 192 325 Q175 318 163 305 Q155 292 152 278 Q150 265 155 255 Z" fill="#BA7517" stroke="white" stroke-width="2"/>
+                    <text x="222" y="288" font-family="var(--ss)" font-size="13" font-weight="600" fill="white" text-anchor="middle" pointer-events="none">Maharashtra</text>
+                    <path class="map-st" onclick="showMap('kt')" d="M175 345 Q190 338 208 335 Q225 333 242 338 Q255 345 262 358 Q268 372 264 388 Q258 400 245 408 Q230 415 215 415 Q198 413 185 405 Q175 395 170 382 Q167 368 170 355 Q172 348 175 345 Z" fill="#0F6E56" stroke="white" stroke-width="2"/>
+                    <text x="218" y="378" font-family="var(--ss)" font-size="13" font-weight="600" fill="white" text-anchor="middle" pointer-events="none">Karnataka</text>
+                </svg></div>
+            <div class="map-info">
+                <div class="map-hint" id="map-hint">← Click a state to see details</div>
+                <div class="mc" id="mc-rj"><h4 style="color:var(--chip)">Rajasthan</h4><p><strong>40M+ people · 50K+ health workers</strong></p><p>CHIP supports state-wide TB surveillance, immunization tracking, and digital health census. Vulnerability-targeted screening adopted nationally. Also active: family planning and climate-health vulnerability mapping.</p></div>
+                <div class="mc" id="mc-mh"><h4 style="color:var(--hac)">Maharashtra</h4><p><strong>15M+ people · Nandurbar HAC operational</strong></p><p>NURTURE child nutrition tracking owned by DWCD, reviewed by Chief Minister's War Room. Nandurbar HAC being considered for statewide replication.</p></div>
+                <div class="mc" id="mc-kt"><h4 style="color:var(--dc)">Karnataka</h4><p><strong>Samasta — locally owned CHIP deployment</strong></p><p>State government owns and operates Samasta, their adapted CHIP, demonstrating the digital public good model. CHVI climate health mapping also active.</p></div>
+            </div></div></div></section>
+
+    <section class="s" id="impact-programs"><div class="w">
+        <div style="text-align:center;margin-bottom:8px"><div class="ey">Health Programs</div><h2 class="sh">Areas where we close the <em>loop</em></h2><p class="sp" style="margin:0 auto">Our model adapts across programs. Select one to learn more.</p></div>
+        <div class="dia-legend" style="justify-content:center;margin:20px 0 8px"><div class="dia-legend-i"><span class="dot dot-d"></span> Data</div><div class="dia-legend-i"><span class="dot dot-i"></span> Insights</div><div class="dia-legend-i"><span class="dot dot-a"></span> Action</div></div>
+        <div style="margin-top:32px">
+            <div class="tabs-n">
+                <button class="tb on" onclick="stab(this,'t-mnh')">Maternal & Newborn</button>
+                <button class="tb" onclick="stab(this,'t-nut')">Child Nutrition</button>
+                <button class="tb" onclick="stab(this,'t-tb')">Tuberculosis</button>
+                <button class="tb" onclick="stab(this,'t-imm')">Immunization</button>
+                <button class="tb" onclick="stab(this,'t-ch')">Climate & Health</button>
+                <button class="tb" onclick="stab(this,'t-fp')">Family Planning</button>
+            </div>
+            <div class="tp on" id="t-mnh"><div style="border-radius:8px;overflow:hidden"><div class="vid" style="margin:0"><iframe src="https://www.youtube.com/embed/wpO8ED8VwvM" allowfullscreen loading="lazy"></iframe></div></div><div class="tp-t"><h3>Identifying high-risk mothers and connecting them to care</h3><p>A <span class="ud">90% digital census</span> and <span class="ui">40+ integrated datasets</span> inform a vulnerability map. A six-person HAC performs <span class="ua">daily call center follow-up</span> for high-risk mothers and infants.</p><div class="foc"><strong>Key result:</strong> 70% daily follow-up rate. Nandurbar HAC model being considered for statewide replication.</div></div></div>
+            <div class="tp" id="t-nut"><div class="tp-ph">Photograph: CHW weighing a child during nutrition assessment</div><div class="tp-t"><h3>Bridging the malnutrition treatment gap across departments</h3><p><span class="ud">NURTURE links Poshan Tracker identification</span> with treatment pathways across nutrition and health departments. <span class="ui">Real-time dashboards</span> surface where children drop out between identification, referral, and treatment. <span class="ua">ICDS supervisors and field monitors</span> drive assessment completion and VCDC/NRC referral follow-through.</p><p style="font-size:.84rem;color:var(--t3);margin-top:8px">In Nandurbar: 680 children assessed in Q1 2026, 329 confirmed SAM, 207 started VCDC referral out of 324 referred. Field monitors now trained to convert non-compliant NRC transfers into completed admissions.</p><div class="foc"><strong>Key result:</strong> 72K SAM suspects assessed statewide. Dashboard owned by DWCD, reviewed by Chief Minister's Social Sector War Room.</div></div></div>
+            <div class="tp" id="t-tb"><div class="tp-ph">Photograph: TB screening camp, Rajasthan</div><div class="tp-t"><h3>Targeted TB surveillance across 40 million people</h3><p><span class="ud">CHIP census</span> identified 10M vulnerable people for priority screening. <span class="ui">Five surveillance rounds</span> revealed that universal screening was missing cases. <span class="ua">A vulnerability-targeted strategy</span> — adopted by the national TB program — transformed detection efficiency.</p><p style="font-size:.84rem;color:var(--t3);margin-top:8px">In the latest cycle: 15,956 presumptive cases received follow-up tests, 1,265 diagnosed positive, and 1,217 initiated treatment — closing the loop from identification through to care.</p><div class="foc"><strong>Key result:</strong> 40K+ suspects in one cycle. 8× detection rate increase. Strategy adopted by Government of India. Nikshay integration now in field testing.</div></div></div>
+            <div class="tp" id="t-imm"><div style="border-radius:8px;overflow:hidden"><div class="vid" style="margin:0"><iframe src="https://www.youtube.com/embed/lX-NwR5Om5U" allowfullscreen loading="lazy"></iframe></div></div><div class="tp-t"><h3>Finding the children the system missed</h3><p><span class="ud">Statewide census</span> of children under two. <span class="ui">Geospatial hotspot mapping</span> created district action plans. <span class="ua">Coordinated field follow-up</span> closed the gap.</p><div class="foc"><strong>Key result:</strong> 96K+ zero-dose identified, 6,700+ immunised.</div></div></div>
+            <div class="tp" id="t-ch"><div class="tp-ph">Screenshot: CHVI climate-health vulnerability map</div><div class="tp-t"><h3>India's first village-level climate-health vulnerability index</h3><p><span class="ud">CHVI combines CHIP social vulnerability data</span> with Google Earth Engine and Indian Meteorological Department layers. <span class="ui">Zonal workshops across all 7 zones</span> of Rajasthan used CHVI outputs to identify high-vulnerability blocks and priority populations. <span class="ua">Districts mapped specific interventions</span> — adjusted working hours, onsite medical camps, ORS distribution, facility preparedness — across health, labour, education, and rural development departments.</p><div class="foc"><strong>Key result:</strong> 15+ district action plans informed. Multisectoral response now operational across Rajasthan for the 2026 heat season.</div></div></div>
+            <div class="tp" id="t-fp"><div class="tp-ph">Photograph: Family planning counselling in Pali district</div><div class="tp-t"><h3>Closing the loop for unmet family planning need</h3><p><span class="ud">CHIP and NFHS data</span> identified Pali district — lowest modern contraceptive use, highest unmet need in Rajasthan. 5 priority sectors selected. <span class="ui">Sector-level analysis</span> of eligible couples pinpointed where to intervene. The state issued a <span class="ua">formal mandate letter</span> directing health workers to use CHIP due-lists for targeted outreach.</p><p style="font-size:.84rem;color:var(--t3);margin-top:8px">ASHAs have visited 413 households with unmet need — 268 have agreed to adopt an appropriate family planning method. Early data shows a 38.7% increase in Antara uptake in intervention areas.</p><div class="foc"><strong>Key result:</strong> 310K+ beneficiaries screened statewide. Live DIA loop closure with measurable service delivery changes underway in Pali.</div></div></div>
+        </div>
+        <div style="text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--bd)">
+            <p style="font-size:.92rem;color:var(--t3);margin-bottom:12px">Read detailed stories of how the DIA loop closes for real families and communities.</p>
+            <a class="btn btn-o" href="https://drive.google.com/file/d/1ckpSEY4D0R6nc69LdXcsxW1aYLSzscUo/view" target="_blank" style="font-size:.84rem;padding:10px 20px">View Case Studies →</a>
+        </div>
+    </div></section>
+
+    <!-- Road Ahead -->
+    <section class="s s-g"><div class="w">
+        <div style="text-align:center;margin-bottom:40px"><div class="ey" style="color:rgba(255,255,255,.5)">The Road Ahead</div><h2 style="font-family:var(--sf);font-size:clamp(1.5rem,3vw,2.1rem);font-weight:500;color:var(--w)">Where we're <em style="color:#C8871A">heading</em></h2><p style="font-size:.92rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto">Measuring not just reach, but health outcomes.</p></div>
+        <div class="g3" style="max-width:800px;margin:0 auto">
+            <div style="text-align:center;padding:32px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px"><div style="font-family:var(--sf);font-size:2.4rem;font-weight:700;color:var(--w)">1M</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:8px">Care loop closures by 2030</div></div>
+            <div style="text-align:center;padding:32px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px"><div style="font-family:var(--sf);font-size:2.4rem;font-weight:700;color:var(--w)">100K</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:8px">People with health improved</div></div>
+            <div style="text-align:center;padding:32px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:8px"><div style="font-family:var(--sf);font-size:2.4rem;font-weight:700;color:var(--w)">10K</div><div style="font-size:.84rem;color:rgba(255,255,255,.55);margin-top:8px">Weekly active CHWs empowered</div></div>
+        </div></div></section>
+
+    <section class="s testi s-a"><div class="w">
+        <blockquote>"What makes me really happy is that it's such a bottom-to-top exercise. We are actually listening to our health workers."</blockquote>
+        <cite><strong>Dr. Mittali Sethi, IAS</strong><span>District Collector, Nandurbar</span></cite>
+    </div></section>
+</div>
+
+<!-- ██████ GET INVOLVED ██████ -->
+<div class="pg" id="pg-involved">
+    <div class="hb"><div class="bg" style="background-color:#0A4F3D"></div><div class="ov" style="background:rgba(0,0,0,.15)"></div>
+        <div class="hc"><h1>Get <em>involved</em></h1><p class="hs">It takes a village to close the loop at the last mile.</p></div></div>
+
+    <!-- Partner -->
+    <section class="s s-b"><div class="w"><div class="g2">
+        <div class="g2-l ph">Photograph: KB team at a government MoU signing</div>
+        <div class="g2-r ft"><h2>Partner <em>with</em> us</h2><p>Whether you're a funder, government department, research institution, or implementation partner — CHIP is designed as an open digital public good. Our playbooks, models, and tools are built to be shared, adapted, and replicated.</p>
+            <button class="form-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.nextElementSibling.classList.contains('open')?'Close contact form ✕':'Open contact form →'">Open contact form →</button>
+            <div class="form-wrap"><div class="form-g">
+                <label>Name</label><input type="text" placeholder="Your name">
+                <label>Email</label><input type="email" placeholder="your@email.com">
+                <label>Organization</label><input type="text" placeholder="Your organization">
+                <label>Inquiry type</label><select><option>Partnership</option><option>Funding</option><option>Research collaboration</option><option>Media</option><option>Other</option></select>
+                <label>Message</label><textarea placeholder="Tell us about your interest..."></textarea>
+                <button class="btn btn-g" onclick="alert('Thank you! Your message has been sent to engage@khushibaby.org.')">Send Message</button>
+                <p style="font-size:.76rem;color:var(--t4)">Messages go to engage@khushibaby.org</p>
+            </div></div>
+        </div></div></div></section>
+
+    <!-- Careers (embedded) -->
+    <section class="s s-a s-b"><div class="w">
+        <div style="text-align:center;margin-bottom:24px"><h2 class="sh">Join our <em>team</em></h2><p class="sp" style="margin:0 auto;text-align:center">120-member team across public health, engineering, data science, design, and field implementation. Certified Great Place to Work.</p></div>
+        <div style="border:1px solid var(--bd);border-radius:8px;overflow:hidden;max-width:860px;margin:0 auto"><iframe src="https://www.khushibaby.org/ui-elements/career-html" style="width:100%;height:520px;border:none" loading="lazy" title="Careers"></iframe></div>
+    </div></section>
+
+    <!-- Fellowship (embedded) -->
+    <section class="s s-b"><div class="w"><div class="g2">
+        <div class="g2-l" style="border:1px solid var(--bd);border-radius:8px;overflow:hidden"><iframe src="https://www.khushibaby.org/ui-elements/fellowship" style="width:100%;height:450px;border:none" loading="lazy" title="Fellowship"></iframe></div>
+        <div class="g2-r ft"><h2>AI in Public Health <em>Fellowship</em></h2><p>Hands-on fellowships for students and early-career professionals in CS, public health, data science, and policy. Work across our DIA model — from field scoping to platform development to impact evaluation.</p>
+            <p>Alumni from:</p>
+            <div class="part-g" style="justify-content:flex-start;margin-top:8px"><div class="pi">Yale</div><div class="pi">Harvard</div><div class="pi">MIT</div><div class="pi">Berkeley</div><div class="pi">J-PAL</div></div>
+        </div></div></div></section>
+
+    <!-- Donate -->
+    <section class="s s-a"><div class="w"><div class="g2 rv">
+        <div class="g2-l ph">Photograph: Community beneficiaries</div>
+        <div class="g2-r ft"><h2>Every contribution <em>counts</em></h2><p>Every donation goes directly towards building the platforms, teams, and processes that close care loops at the last mile.</p><div class="btns" style="margin-top:16px"><a class="btn btn-g" href="https://www.khushibaby.org/ui-elements/donate-page" target="_blank">Donate Now</a></div></div>
+    </div></div></section>
+
+    <section class="s s-b" style="padding:48px 0"><div class="w" style="max-width:680px"><div style="text-align:center;margin-bottom:12px"><div class="ey">Building the Next Decade</div></div><div class="vid"><iframe src="https://www.youtube.com/embed/Nzkmm9MBgVY" allowfullscreen loading="lazy"></iframe></div></div></section>
+</div>
+
+<!-- FOOTER -->
+<footer><div class="w"><div class="fg">
+    <div class="fc"><div class="fl">Khushi<span>Baby</span></div><p>Closing the loop for public health systems at the last mile.</p><p style="margin-top:10px;font-size:.78rem">18, Jai Ambey Colony, Civil Lines<br>Jaipur, Rajasthan 302006<br>contact@khushibaby.org</p></div>
+    <div class="fc"><h4>About Us</h4><a onclick="go('about','story')">Our Story</a><a onclick="go('about','team')">Our Team</a><a onclick="go('about','partners')">Partners</a><a onclick="go('about','reports')">Reports</a></div>
+    <div class="fc"><h4>Our Work</h4><a onclick="go('model')">Operating Model</a><a onclick="go('model','os')">CHIP Platform</a><a onclick="go('impact','programs')">Health Programs</a><a onclick="go('impact')">Impact</a></div>
+    <div class="fc"><h4>Get Involved</h4><a onclick="go('involved')">Careers</a><a onclick="go('involved')">Fellowship</a><a onclick="go('involved')">Partner With Us</a><a onclick="go('involved')">Donate</a></div>
+</div><div class="fb"><span>© 2026 Khushi Baby Association. All rights reserved.</span><span>Privacy Policy</span></div></div></footer>
+
+<script>
+    /* Routing */
+    function go(p,sec){
+        document.querySelectorAll('.pg').forEach(e=>e.classList.remove('on'));
+        document.getElementById('pg-'+p).classList.add('on');
+        document.querySelectorAll('[data-pg]').forEach(a=>{a.classList.remove('on');if(a.dataset.pg===p)a.classList.add('on')});
+        if(sec){setTimeout(()=>{const ids={'story':'about-story','mission':'about-mission','team':'about-team','partners':'about-partners','reports':'about-reports','nandurbar':'model-nandurbar','dia':'model-dia','os':'model-os','engage':'model-engage','scale':'model-scale','glance':'impact-glance','map':'impact-map','programs':'impact-programs'};const el=document.getElementById(ids[sec]||sec);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})},120)}
+        else window.scrollTo(0,0);
+    }
+
+    /* DIA interactive */
+    const diaColors={D:'#0F6E56',I:'#C0392B',A:'#2B6CB0'};
+    const diaDefault={D:'#0F6E56',I:'#C0392B',A:'#2B6CB0'};
+    let diaActive=null;
+    function diaClick(k){
+        diaActive=(diaActive===k)?null:k;
+        ['D','I','A'].forEach(x=>{
+            const isOn=x===diaActive;
+// Update both home and model page diagrams
+            ['','2'].forEach(sfx=>{
+                const nf=document.getElementById('nf'+x+sfx);
+                const nl=document.getElementById('nl'+x+sfx);
+                const dd=document.getElementById('dd'+x+sfx);
+                if(nf)nf.setAttribute('fill',isOn?'#1A1A1A':diaDefault[x]);
+                if(nl)nl.setAttribute('fill',isOn?'#1A1A1A':'#555');
+                if(dd)dd.classList.toggle('on',isOn);
+            });
+        });
+// Toggle hints
+        ['dia-hint','dia-hint2'].forEach(id=>{const h=document.getElementById(id);if(h)h.style.display=diaActive?'none':'flex'});
+    }
+
+    /* Expand/collapse */
+    function toggle(btn){const c=btn.nextElementSibling;c.classList.toggle('open');btn.textContent=c.classList.contains('open')?'Show less ▴':btn.textContent.replace('▴','▾')}
+
+    /* Tabs */
+    function stab(btn,id){const w=btn.closest('.w');w.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));btn.classList.add('on');w.querySelectorAll('.tp').forEach(p=>p.classList.remove('on'));document.getElementById(id).classList.add('on')}
+
+    /* Map */
+    function showMap(s){document.querySelectorAll('.mc').forEach(c=>c.classList.remove('on'));document.getElementById('mc-'+s).classList.add('on');document.getElementById('map-hint').style.display='none'}
+</script>
+</body>
+</html>

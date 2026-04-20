@@ -151,6 +151,8 @@
     letter-spacing: 0.05em;
     color: var(--green);
   }
+  .howit-row p, .howit-row .sub-list { display: none; }
+  .howit-row.open p, .howit-row.open .sub-list { display: block; }
   .howit-row.open { padding-bottom: 26px; background: var(--bg-light); }
   .howit-row.open .eyebrow {
     color: var(--green);
@@ -191,7 +193,31 @@
     align-items: center;
   }
   .howit-row.open .sub-list li:last-child { border-bottom: none; }
-  .howit-row.open .sub-list li::after { content: '+'; font-family: 'Lato', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: 0.05em; color: var(--green); }
+  .howit-row.open .sub-list li { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto; align-items: center; cursor: pointer; }
+  .howit-row.open .sub-list li::after { content: '+'; font-family: 'Lato', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: 0.05em; color: var(--green); grid-row: 1; grid-column: 2; }
+  .howit-row.open .sub-list li.sub-open::after { content: '–'; }
+  .howit-row.open .sub-list li .sub-label {
+    display: block;
+    grid-column: 1;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text-body);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 2px;
+  }
+  .howit-row.open .sub-list li .sub-body {
+    display: none;
+    grid-column: 1 / -1;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-body);
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.5;
+    margin-top: 10px;
+  }
+  .howit-row.open .sub-list li.sub-open .sub-body { display: block; }
 
   .foundation { padding: 110px 0; }
   .foundation-inner {
@@ -261,6 +287,7 @@
       <span class="label">PLATFORM: CHIP</span>
       <div class="body">
         <p>A unified, offline-ready platform co-designed over 250,000 field hours. CHIP consolidates the entire work requirement of frontline health workers across all primary care programs into a single interface — reducing 800+ indicators across 12 national health programs.</p>
+
         <a href="chip.html" class="btn">MORE ABOUT CHIP</a>
       </div>
     </div>
@@ -336,25 +363,71 @@
       var data = window.KB_DATA;
       if (!data || !Array.isArray(data.howItWorks)) return;
       var rows = document.querySelectorAll('.howit-row');
-      var lastIdx = rows.length - 1;
-      var last = rows[lastIdx];
-      var lastData = data.howItWorks[lastIdx];
-      if (last && lastData) {
-        last.classList.add('open');
+
+      rows.forEach(function(row, i){
+        var itemData = data.howItWorks[i];
+        if (!itemData) return;
+
+        /* Add body paragraph */
         var p = document.createElement('p');
-        p.textContent = lastData.body;
-        last.appendChild(p);
-        if (Array.isArray(lastData.subItems)) {
+        p.textContent = itemData.body;
+        row.appendChild(p);
+
+        /* Add sub-items if present */
+        if (Array.isArray(itemData.subItems)) {
           var ul = document.createElement('ul');
           ul.className = 'sub-list';
-          lastData.subItems.forEach(function(s){
+          itemData.subItems.forEach(function(s){
             var li = document.createElement('li');
-            li.textContent = s;
+            /* Support both string and object formats */
+            var title = typeof s === 'string' ? s : s.title;
+            var sub = typeof s === 'object' && s.sub ? s.sub : '';
+            var body = typeof s === 'object' && s.body ? s.body : '';
+
+            var titleSpan = document.createElement('span');
+            titleSpan.textContent = title;
+            li.appendChild(titleSpan);
+
+            if (sub) {
+              var subSpan = document.createElement('span');
+              subSpan.className = 'sub-label';
+              subSpan.textContent = sub;
+              li.appendChild(subSpan);
+            }
+
+            if (body) {
+              var bodyP = document.createElement('p');
+              bodyP.className = 'sub-body';
+              bodyP.textContent = body;
+              li.appendChild(bodyP);
+
+              li.style.cursor = 'pointer';
+              li.addEventListener('click', function(){
+                var wasExpanded = li.classList.contains('sub-open');
+                ul.querySelectorAll('li').forEach(function(l){ l.classList.remove('sub-open'); });
+                if (!wasExpanded) li.classList.add('sub-open');
+              });
+            }
+
             ul.appendChild(li);
           });
-          last.appendChild(ul);
+          row.appendChild(ul);
         }
-      }
+
+        /* Click to toggle */
+        var eyebrow = row.querySelector('.eyebrow');
+        if (eyebrow) {
+          eyebrow.style.cursor = 'pointer';
+          eyebrow.addEventListener('click', function(){
+            var wasOpen = row.classList.contains('open');
+            rows.forEach(function(r){ r.classList.remove('open'); });
+            if (!wasOpen) row.classList.add('open');
+          });
+        }
+      });
+
+      /* Open last item by default */
+      if (rows.length) rows[rows.length - 1].classList.add('open');
     }, 150);
   });
 </script>

@@ -361,6 +361,7 @@
           <div class="n-row" data-template>
             <div class="n-head">
               <span class="eyebrow" data-bind="eyebrow"></span>
+              <span class="n-sub" data-bind="sub" style="display:block; font-family:'Lato',sans-serif; font-size:15px; font-weight:400; color:var(--text-body); margin-top:4px; text-transform:none; letter-spacing:0;"></span>
             </div>
             <p class="open-body" data-bind="body"></p>
           </div>
@@ -376,7 +377,7 @@
 </section>
 
 <section class="tele-hac">
-  <span class="eyebrow">SCALING HAC</span>
+  <span class="eyebrow">SCALING THE ACTION LAYER</span>
   <h2>Tele-HAC: Scaling the Action Layer for Community Outreach</h2>
   <p>The current HAC model is powerful but human-intensive. TeleHAC is a forthcoming AI-augmented module within the CHIP dashboard that transforms the manual call center operation into a scalable, quality-monitored community outreach system.</p>
   <p>Where a manual call center is constrained by operator bandwidth and supervision capacity, TeleHAC brings in automated triage prioritization — surfacing the highest-risk beneficiaries for next follow-up — structured counseling support for operators, and longitudinal tracking of conversation quality. The goal is to extend the reach and depth of community follow-up without proportionally scaling the team size, and to generate the kind of systematic learning about what counseling approaches work that a manual system cannot produce.</p>
@@ -431,9 +432,9 @@ document.addEventListener('DOMContentLoaded', function(){
           var b = document.createElement('div');
           b.className = 'flow-branches';
           var items = [
-            { h: 'Data',     p: 'Chip App, Dashboard, And Whatsapp Group Set Up. System Of Data Collection Established' },
-            { h: 'Insights', p: 'Analysing Triage List, Hotspot Maps, Blindspots, Overlaps, Data-Quality, Etc. To Address The Identified Gaps' },
-            { h: 'Action',   p: 'Implementing Health Services, Trainings, Screening Camps, Resource Reallocations, Call Center Modules, Public Health Mandates & Innovations' }
+            { h: 'Data',     p: 'CHIP app, dashboard and WhatsApp group set up. System of data collection established with the frontline cadre to fill gaps the routine MIS can\'t see.' },
+            { h: 'Insights', p: 'Analysing triage lists, hotspot maps, blindspots, overlaps, data quality etc. to address the identified gaps.' },
+            { h: 'Action',   p: 'Implementing health services, trainings, screening camps, resource reallocations, call center modules, public health mandates and innovations.' }
           ];
           items.forEach(function(it){
             var wrap = document.createElement('div');
