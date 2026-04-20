@@ -194,10 +194,140 @@
     "india": "18, Jai Ambey Colony, Civil Lines, Jaipur, Rajasthan 302006",
     "us": "6016 Louis Way El Dorado Hills, CA 95762",
     "links": [
-      { "label": "Careers",                  "href": "#" },
+      { "label": "Careers",                  "href": "get-involved.html" },
       { "label": "Financials",               "href": "#" },
       { "label": "Grievance Redressal Form", "href": "#" }
     ],
     "copy": "© 2026 KHUSHI BABY ASSOCIATION. ALL RIGHTS RESERVED"
+  },
+
+  "about": {
+    "heroTitle": "About Khushi Baby",
+    "heroSub": "We are committed to empowering community health workers and public health decision makers with innovative, data-driven solutions",
+    "stats": [
+      { "num": "60M+", "label": "BENEFICIARIES" },
+      { "num": "85K+", "label": "HEALTH WORKERS" },
+      { "num": "40K+", "label": "VILLAGES" },
+      { "num": "50+", "label": "AWARDS" }
+    ],
+    "mission": "To strengthen last mile health systems by empowering community health workers and partners with digital tools for bridging gaps in primary health care.",
+    "vision": "A resilient, data-driven health system in which every child, family and village is supported to achieve happiness and well-being — in other words, khushi.",
+    "story": "In his junior year, Ruchit took the course 'Appropriate Technology for the Developing World' — taught by Professors Joseph Zinter and Robert Hopkins at the Yale Center for Engineering Innovation and Design. The objective of the course was to develop innovations to address the world's immunization gap. Ruchit and his team focused on the area of data and accountability, specifically for creation of a digital vaccine record.",
+    "teamIntro": "Our 90-member team is at the forefront of creating digital health platforms that enhance accessibility, efficiency, and effectiveness, ensuring that quality healthcare reaches the last mile.",
+    "values": {
+      "title": "What Drives Us",
+      "subtitle": "We partner, build, and learn with the communities we serve. Our team speaks to or visits with 100–500 community health workers every day. Together we have spent 250K+ hours in the field.",
+      "items": [
+        { "title": "Technology", "body": "We build innovative, integrated digital health solutions co-designed with frontline health workers through 250,000+ hours of collaboration." },
+        { "title": "Team", "body": "Our multidisciplinary team combines tech, data science, programs, policy, and field implementation — hired from the communities they serve." },
+        { "title": "Tradition", "body": "We respect and build upon existing health systems and local knowledge, ensuring solutions are culturally grounded and sustainable." }
+      ]
+    },
+    "approach": [
+      { "title": "Digital Platforms", "body": "We develop unified digital health solutions, co-designed with over 250,000 hours of working alongside frontline health workers." },
+      { "title": "Health System Strengthening", "body": "We support public health decision-makers with data-driven insights and policies to close health equity gaps." },
+      { "title": "Research & Development", "body": "We collaborate with experts to deploy AI/ML technologies for precision-public health delivery and impact evaluation." }
+    ],
+    "board": [
+      { "name": "Ruchit Nagar, MD, MPH", "role": "CEO/Co-founder at Khushi Baby; internal medicine–pediatrics resident at Yale New Haven Hospital." },
+      { "name": "Joe Zinter, PhD", "role": "Assistant Director, Yale Center for Engineering Innovation and Design; taught the course from which Khushi Baby was born." },
+      { "name": "Robert \"Bo\" Hopkins", "role": "Lecturer at Jackson School for Global Affairs at Yale, 25 years of experience in private equity." },
+      { "name": "Zeena Johar, PhD", "role": "CBO at Imagine Pediatrics, Principal at Rubicon Founders, ex-Yale World Fellow, Duke Global Innovation Fellow." },
+      { "name": "Preethi Venkat, MD, MPH", "role": "Gastroenterology Fellow at University of Virginia; with KB from 2015–2017 before transitioning to board." },
+      { "name": "Tanooj Luthra", "role": "CS graduate from UC Berkeley; CTO for two startups acquired by Box and Brex; served as first CTO of Khushi Baby." },
+      { "name": "Bhupesh Nagar", "role": "IT Management Professional with 30+ years experience; Senior Enterprise Tech Developer at SMUD." }
+    ],
+    "leadership": [
+      { "name": "Ruchit Nagar", "title": "CEO and Co-founder" },
+      { "name": "Mohammed Shahnawaz", "title": "COO and Co-founder" },
+      { "name": "Arulsrinivaasan", "title": "Chief Technology Officer" },
+      { "name": "Mohammad Sarparajul Ambiya", "title": "Chief Data Scientist" },
+      { "name": "Ajay Sharma", "title": "Chief of Staff" },
+      { "name": "Huzaifa Bilal", "title": "Country Lead — Health System Strengthening" }
+    ]
+  },
+
+  "impact": {
+    "heroTitle": "Areas We Impact",
+    "heroSub": "Maximizing impact is at the core of our work. Impact at Khushi Baby is created through data-driven interventions and measured systematically through an iterative process.",
+    "topStats": [
+      { "num": "60M+", "label": "Beneficiaries registered" },
+      { "num": "41M+", "label": "Beneficiaries screened" },
+      { "num": "14.5M", "label": "Screened for communicable disease" },
+      { "num": "12.3M", "label": "Routine immunizations conducted" }
+    ],
+    "healthAreas": [
+      { "title": "Maternal Health", "num": "500K", "body": "Improving prenatal care adherence, access to high-risk pregnancy tracking, and unmet family planning needs through digital tools and machine learning prioritization." },
+      { "title": "Child Malnutrition", "num": "16,597", "body": "High Risk Child Tracking program integrating digital health tools to facilitate a closed referral loop — quality data collection, automated flagging, and field verification to dramatically improve detection of malnutrition." },
+      { "title": "Immunization", "num": "12.3M", "body": "Demonstrated 12% improvement in infant immunization rates through automated follow-up mechanisms and real-time monitoring of vaccine rollouts." },
+      { "title": "Tuberculosis", "num": "5.9M", "body": "Screening vulnerable populations for TB, shaping national TB surveillance strategy, and integrating with Ni-kshay national TB registry." },
+      { "title": "Non-Communicable Diseases", "num": "29M", "body": "Beneficiaries screened for NCDs and substance use, enabling early detection and identifying health disparities across communities." },
+      { "title": "Climate & Health", "num": "462 Blocks", "body": "Identified blocks in drought-prone, heat wave-prone, and poor air quality areas. Built India's first village-level multidimensional poverty index." }
+    ],
+    "tocTitle": "Theory of Change",
+    "tocBody": "Khushi Baby's solution includes team + technology for both health systems strengthening and measurement of the health system's impact. Creating an impact in public health is a multi-step, multi-stakeholder, and multi-year process. Measuring impact requires first measuring the accuracy of reported data and establishing a mixed-methods process for longitudinal evaluation and independent validation.",
+    "tocFormula": [
+      { "title": "Team", "body": "Capacity building support for end-to-end platform implementation and data-driven decision-making." },
+      { "title": "Tech", "body": "CHIP platform harmonizes 800+ public health indicators across 12 national health programs." },
+      { "title": "Tradition", "body": "Solutions designed to measure bio-psycho-social, climate, and gender related frameworks for public health impact." }
+    ]
+  },
+
+  "publications": [
+    { "tag": "RMNCH", "title": "Khushi Baby Social Audit 2021", "authors": "Waterbridge Advisors (2021)", "href": "https://drive.google.com/file/d/1anPAF3T_GNy19VTqdisjTwTFyvVxWQZs/view" },
+    { "tag": "RMNCH", "title": "Impacts of a novel mHealth platform to track maternal and child health in Udaipur, India", "authors": "Ruchit Nagar et al. (2020)", "href": "https://www.3ieimpact.org/sites/default/files/2020-10/IE129-TW10.1078-Khushi-Baby-maternal-child-health-Udaipur-India.pdf" },
+    { "tag": "AI", "title": "Measuring Data Collection Quality for Community Healthcare", "authors": "Ramesha Karunasena et al. (2020)", "href": "https://arxiv.org/pdf/2011.02962v4" },
+    { "tag": "RMNCH", "title": "A qualitative study analyzing barriers to referral care for high risk pregnant women in rural Udaipur", "authors": "Saachi Dalal et al. (2021)", "href": "#" },
+    { "tag": "COVID-19", "title": "Addressing COVID-19 outbreaks in socio-demographically challenging urban pockets: lessons from India", "authors": "Saachi Dalal et al. (2020)", "href": "https://blogs.lshtm.ac.uk/hppdebated/2020/06/08/addressing-covid-19-outbreaks-in-socio-demographically-challenging-urban-pockets-lessons-from-india/" },
+    { "tag": "COVID-19", "title": "The Role of Technology in COVID-19 Response and Maintaining Access to Essential Health Services", "authors": "Saachi Dalal (2020)", "href": "https://www.improvingphc.org/sites/default/files/Rajasthan_telehealth.pdf" },
+    { "tag": "RMNCH", "title": "Real-time monitoring of the rollout of PCV in rural India using a digital tracking platform", "authors": "Ruchit Nagar et al. (2021)", "href": "https://gatesopenresearch.org/articles/5-16/v1" },
+    { "tag": "Community", "title": "A Qualitative Analysis of Accredited Social Health Activist Experiences in Udaipur, India", "authors": "Sarah Locke (2016)", "href": "#" },
+    { "tag": "RMNCH", "title": "A Case-Based Investigation of Severe Acute Malnutrition in Rural Udaipur India", "authors": "Ruchit Nagar (2019)", "href": "#" },
+    { "tag": "RMNCH", "title": "MPH Dissertation, Yale School of Public Health", "authors": "Ruchit Nagar (2016)", "href": "https://drive.google.com/file/d/1KsIdTCcUpmxN6ffcawMosa1dsXZSb1-B/view" },
+    { "tag": "RMNCH", "title": "MPH Dissertation, Yale School of Public Health", "authors": "Preethi Venkat (2016)", "href": "https://drive.google.com/file/d/0BzSAcEFFmeSHN3ZudnZMNmNyME0/view" },
+    { "tag": "RMNCH", "title": "A cluster randomized trial to determine the effectiveness of Khushi Baby 1.0 on infant immunization adherence", "authors": "Ruchit Nagar et al. (2017)", "href": "https://www.sciencedirect.com/science/article/abs/pii/S0264410X17315827" }
+  ],
+
+  "getInvolved": {
+    "heroTitle": "Get Involved",
+    "heroSub": "Join a team dedicated to making a difference in public health — through careers, fellowship, or support.",
+    "workplaceIntro": "Join our exceptional workplace, officially certified as a Great Place to Work. We foster a vibrant and inclusive environment where creativity thrives, collaboration flourishes, and every individual is valued.",
+    "benefits": [
+      { "title": "Medical Insurance", "body": "Comprehensive health coverage for you and your family." },
+      { "title": "Learning Stipend", "body": "Annual stipend for professional development and continued learning." },
+      { "title": "Workshops & Seminars", "body": "Sponsored access to industry conferences, workshops, and seminars." },
+      { "title": "World-Class Research", "body": "Learning opportunities with institutions like Yale, Harvard, and Google AI." }
+    ],
+    "openings": [
+      { "title": "MEL Country Lead", "location": "Jaipur / Delhi", "type": "Full Time" },
+      { "title": "MEL Officer", "location": "Bangalore / Mumbai", "type": "Full Time" },
+      { "title": "Senior UI/UX Designer", "location": "Mumbai", "type": "Full Time" },
+      { "title": "State Operations Lead", "location": "Bengaluru", "type": "Full Time" },
+      { "title": "State Implementation Lead", "location": "Bengaluru", "type": "Full Time" },
+      { "title": "Senior HR Officer", "location": "Jaipur", "type": "Full Time" },
+      { "title": "Program Manager — Climate Health", "location": "Bengaluru / Jaipur / Delhi", "type": "Full Time" },
+      { "title": "Associate Android Developer", "location": "Jaipur / Bengaluru", "type": "Full Time" },
+      { "title": "Lead Android Developer", "location": "Jaipur", "type": "Full Time" },
+      { "title": "Senior Finance Manager", "location": "Jaipur", "type": "Full Time" },
+      { "title": "Community Engagement Associate", "location": "Bengaluru", "type": "Full Time" },
+      { "title": "Senior Web Developer", "location": "Bengaluru / Jaipur", "type": "Full Time" },
+      { "title": "Product Manager", "location": "Mumbai", "type": "Full Time" },
+      { "title": "Lead Data Engineer", "location": "Jaipur", "type": "Full Time" }
+    ],
+    "fellowship": {
+      "title": "KB Fellowship Program",
+      "body": "We offer a comprehensive fellowship experience that provides hands-on learning, professional development, and a deep dive into our innovative approach to healthcare technology. Founded out of Yale in 2014, Khushi Baby partners with Harvard and Yale students to get involved in community health work spanning 11 SDG goals.",
+      "areas": [
+        "Health Systems and Health Policy",
+        "Health Delivery Design",
+        "Disease Modeling and Big Data Analytics",
+        "Qualitative and Quantitative Research",
+        "Impact Evaluation and Cost-Effectiveness Analysis"
+      ]
+    },
+    "donate": {
+      "title": "Support Our Mission",
+      "body": "Your contribution helps us strengthen last-mile health systems and empower community health workers across India. Every donation directly supports our work in reaching the most vulnerable communities."
+    }
   }
 }
