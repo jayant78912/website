@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khushi Baby — Operating System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background: #ffffff; }
+
+  .os-hero { padding: 80px 24px 30px; text-align: center; }
+  .os-hero h1 { font-family: 'Lora', serif; font-size: 70px; line-height: 1; max-width: 800px; margin: 0 auto; font-weight: 600; letter-spacing: 0; }
+
+  .dia-cycle { max-width: 320px; margin: 50px auto 40px; display: block; }
+
+  .os-intro {
+    max-width: 860px;
+    margin: 0 auto 80px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    line-height: 1.1;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 0 32px;
+  }
+
+  .dia-card {
+    max-width: 960px;
+    margin: 0 auto 130px;
+    background: #fff;
+    border-radius: 4px;
+    padding: 48px 56px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+  }
+  .dia-card h4 {
+    font-family: 'Lato', sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    color: var(--green);
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    line-height: 0.9;
+  }
+  .dia-card p { font-family: 'Lato', sans-serif; font-size: 19px; color: var(--text-body); line-height: 1.4; margin: 0; }
+
+  .deploy-intro {
+    max-width: 860px;
+    margin: 0 auto 70px;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    line-height: 1.1;
+    color: var(--text-dark);
+    padding: 0 32px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  .deploy-grid {
+    max-width: 1100px;
+    margin: 0 auto 110px;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .tab {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: none;
+  }
+  .tab .label {
+    background: var(--green);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 13px 20px;
+    display: inline-block;
+    line-height: 0.9;
+    border-radius: 6px;
+  }
+  .tab-black .label { background: var(--black); }
+  .tab .body { padding: 20px 24px 22px; }
+  .tab p { font-family: 'Lato', sans-serif; font-size: 20px; color: var(--text-body); line-height: 1.5; margin: 8px 0 18px; font-weight: 400; }
+  .tab a.btn { font-family: 'Lato', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.05em; padding: 10px 20px; }
+
+  .howit-wrap {
+    position: relative;
+    background: url('frame-2/Rectangle 122.webp') center/cover no-repeat;
+    padding: 100px 0 0;
+    margin-bottom: 200px;
+  }
+  .howit-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 70%);
+  }
+  .howit-inner {
+    position: relative;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px 0 80px;
+    display: block;
+  }
+  .howit-card {
+    max-width: 600px;
+    margin-bottom: -180px;
+  }
+  .howit-wrap h2 { font-family: 'Lora', serif; color: #fff; font-size: 70px; font-weight: 600; margin-bottom: 36px; line-height: 1; letter-spacing: 0; }
+  .howit-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+  .howit-row {
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+  .howit-row:last-child { border-bottom: none; }
+  .howit-row .eyebrow {
+    margin-bottom: 0;
+    color: var(--text-dark);
+    font-family: 'Lora', serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0;
+    text-transform: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .howit-row .eyebrow::after {
+    content: '+';
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: var(--green);
+  }
+  .howit-row.open { padding-bottom: 26px; background: var(--bg-light); }
+  .howit-row.open .eyebrow {
+    color: var(--green);
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+  .howit-row.open .eyebrow::after { content: '–'; }
+  .howit-row.open p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-body);
+    line-height: 1.5;
+    margin: 0 0 14px;
+  }
+  .howit-row.open .sub-list {
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--border);
+  }
+  .howit-row.open .sub-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .howit-row.open .sub-list li:last-child { border-bottom: none; }
+  .howit-row.open .sub-list li::after { content: '+'; font-family: 'Lato', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: 0.05em; color: var(--green); }
+
+  .foundation { padding: 110px 0; }
+  .foundation-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
+  }
+  .foundation h2 { font-family: 'Lora', serif; font-size: 47px; font-weight: 600; line-height: 1.1; letter-spacing: 0; margin-bottom: 26px; max-width: 580px; }
+  .foundation p { font-family: 'Lato', sans-serif; font-size: 22px; font-weight: 400; color: var(--text-body); line-height: 1.5; }
+  .foundation .btn { font-family: 'Lato', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.05em; }
+
+  @media (max-width: 900px) {
+    .dia-card, .deploy-grid, .howit-inner, .foundation-inner { grid-template-columns: 1fr; gap: 40px; }
+    .os-hero h1 { font-size: 40px; }
+    .deploy-intro { font-size: 22px; }
+    .howit-wrap h2 { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="KB-logo.svg" alt="Khushi Baby"></a>
+    <nav class="nav-links">
+      <a href="#">ABOUT KB</a>
+      <div class="nav-item">
+        <a href="index.html" class="active">OUR WORK <span class="caret">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="index.html">Overview</a>
+          <a href="operating-system.html" class="active">Operating System</a>
+          <a href="chip.html">CHIP Platform</a>
+          <a href="health-action-centers.html">Health Action Centers</a>
+        </div>
+      </div>
+      <a href="#">AREAS WE IMPACT</a>
+      <a href="#">PUBLICATIONS</a>
+      <a href="#">GET INVOLVED</a>
+    </nav>
+  </div>
+</header>
+
+<section class="os-hero">
+  <h1>A New Public Health<br/>Operating System</h1>
+  <img src="frame-2/Group 194.svg" alt="DIA cycle" class="dia-cycle">
+</section>
+<p class="os-intro">Khushi Baby's operating model strengthens public health systems by closing the gap between data, insights, and action — particularly at the last mile of service delivery.</p>
+
+<div class="dia-card" data-repeat="dia">
+  <div data-template>
+    <h4 data-bind="title"></h4>
+    <p data-bind="body"></p>
+  </div>
+</div>
+
+<p class="deploy-intro">We deploy a technology platform (CHIP) and an embedded process (Health Action Centers) to complete the Data–Insights–Action feedback loop.</p>
+
+<div class="deploy-grid">
+  <div>
+    <img src="frame-2/Group 190.svg" alt="Process Platform diagram" style="width:100%;height:auto;">
+  </div>
+  <div>
+    <div class="tab">
+      <span class="label">PLATFORM: CHIP</span>
+      <div class="body">
+        <p>A unified, offline-ready platform co-designed over 250,000 field hours. CHIP consolidates the entire work requirement of frontline health workers across all primary care programs into a single interface — reducing 800+ indicators across 12 national health programs.</p>
+        <a href="chip.html" class="btn">MORE ABOUT CHIP</a>
+      </div>
+    </div>
+    <div class="tab tab-black">
+      <span class="label">PROCESS: HEALTH ACTION CENTERS</span>
+      <div class="body">
+        <p>A lean, multidisciplinary unit embedded within government health departments. HACs identify the primary health priorities within a geography, conduct a structured gap analysis across the DIA cycle, then co-design, implement, and iteratively refine targeted interventions with government and local partners.</p>
+        <a href="health-action-centers.html" class="btn">MORE ABOUT HAC</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="howit-wrap">
+  <div class="brand-stripe thin" style="position:absolute; bottom:0; left:0; right:0; z-index:2;">
+    <span class="s-red"></span><span class="s-yellow"></span><span class="s-green"></span>
+  </div>
+  <div class="howit-inner">
+    <div>
+      <h2>How It Works</h2>
+      <div class="howit-card" data-repeat="howItWorks">
+        <div class="howit-row" data-template>
+          <div class="eyebrow" data-bind="eyebrow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="foundation">
+  <div class="foundation-inner">
+    <div>
+      <h2>This operating model is the foundation for all of KB's work across Rajasthan, Karnataka, and Maharashtra</h2>
+      <a href="#" class="btn" style="margin-top:20px;">AREAS WE IMPACT</a>
+    </div>
+    <div>
+      <p>The knowledge gained from running our model gets transferred onto a playbook to replicate at scale. This allows us to adapt it to multiple health programs: reproductive, maternal, neonatal and child health and nutrition, non-communicable diseases, tuberculosis, infectious and vector-borne diseases, immunizations, climate and health.</p>
+      <p style="margin-top:18px;">The goal is to make the playbooks versatile enough to be used effectively across various health areas over time, as required.</p>
+    </div>
+  </div>
+</section>
+
+<div class="brand-stripe">
+  <span class="s-yellow"></span><span class="s-red"></span><span class="s-green"></span>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h5 class="footer-org" data-bind="footer.org"></h5>
+      <div class="f-address-row">
+        <div class="f-address">
+          <h5 class="footer-label">INDIA ADDRESS</h5>
+          <p data-bind="footer.india"></p>
+        </div>
+        <div class="f-address">
+          <h5 class="footer-label">US ADDRESS</h5>
+          <p data-bind="footer.us"></p>
+        </div>
+      </div>
+    </div>
+    <div class="f-links" data-repeat="footer.links">
+      <a data-template href="" data-bind-href="href" data-bind="label"></a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-bind="footer.copy"></div>
+</footer>
+
+<script src="render.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      var data = window.KB_DATA;
+      if (!data || !Array.isArray(data.howItWorks)) return;
+      var rows = document.querySelectorAll('.howit-row');
+      var lastIdx = rows.length - 1;
+      var last = rows[lastIdx];
+      var lastData = data.howItWorks[lastIdx];
+      if (last && lastData) {
+        last.classList.add('open');
+        var p = document.createElement('p');
+        p.textContent = lastData.body;
+        last.appendChild(p);
+        if (Array.isArray(lastData.subItems)) {
+          var ul = document.createElement('ul');
+          ul.className = 'sub-list';
+          lastData.subItems.forEach(function(s){
+            var li = document.createElement('li');
+            li.textContent = s;
+            ul.appendChild(li);
+          });
+          last.appendChild(ul);
+        }
+      }
+    }, 150);
+  });
+</script>
+
+</body>
+</html>

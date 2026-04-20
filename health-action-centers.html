@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khushi Baby — Health Action Centers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Lato:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background: #ffffff; }
+
+  .hac-intro {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 80px 32px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .hac-intro .left .eyebrow {
+    color: #038C73;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .hac-intro h1 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin: 0;
+    max-width: 500px;
+  }
+  .hac-intro p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--text-body);
+    line-height: 1.5;
+    letter-spacing: 0;
+    max-width: 520px;
+    margin: 0;
+  }
+
+  .hac-model-title { text-align: center; padding: 60px 0 40px; }
+  .hac-model-title h2 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .flow-wrap { position: relative; padding: 40px 0 120px; overflow: hidden; }
+  .flow-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+  }
+  .flow-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .flow-card {
+    position: relative;
+    z-index: 2;
+    max-width: 569px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 50px 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  }
+  .flow-step {
+    padding: 20px 24px;
+    border: 1px solid #00000033;
+    border-radius: 15px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 380px;
+    position: relative;
+    z-index: 2;
+    font-family: 'Lato', sans-serif;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-dark);
+    line-height: 1.4;
+    background: #fff;
+  }
+  .flow-arrow {
+    height: 30px;
+    width: 2px;
+    background: #00000033;
+    margin: 0 auto;
+    position: relative;
+  }
+  .flow-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: -4px;
+    width: 0; height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #00000033;
+  }
+  .flow-branches {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 0 auto;
+    max-width: 470px;
+    padding: 20px 24px;
+    border: 1px solid #00000033;
+    border-radius: 15px;
+    position: relative;
+    margin-top: -25px;
+    padding-top: 40px;
+  }
+  .flow-branches .branch {
+    text-align: left;
+  }
+  .flow-branches .branch h5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--text-dark);
+    font-weight: 900;
+    margin: 0 0 8px;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    line-height: 1.4;
+  }
+  .flow-branches .branch p {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    color: var(--text-body);
+    line-height: 1.5;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+
+  .nandurbar { background: #141418; color: #fff; padding: 100px 0 70px; }
+  .nandurbar .title-wrap { text-align: center; margin-bottom: 56px; padding: 0 32px; }
+  .nandurbar .eyebrow {
+    color: #60B58B;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .nandurbar h2 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #ECE1D8;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .nandurbar-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 0;
+    align-items: center;
+  }
+  .nandurbar-grid img.photo { width: 100%; border-radius: 10px; }
+  .nandurbar-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    color: var(--text-dark);
+    margin-left: -80px;
+    position: relative;
+    z-index: 2;
+  }
+  .nandurbar-card h3 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 28px;
+    color: var(--text-dark);
+  }
+  .n-row { border-bottom: 1px solid var(--border); padding: 18px 0; }
+  .n-row:first-child { padding-top: 0; }
+  .n-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .n-row .eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: var(--green);
+    margin-bottom: 0;
+    display: block;
+  }
+  .n-row .n-head { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+  .n-row .n-head::after { content: '+'; color: var(--green); font-size: 20px; font-weight: 900; }
+  .n-row.expanded .n-head::after { content: '–'; }
+  .n-row .open-body {
+    margin: 12px 0 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.6;
+  }
+  .n-row:not(.expanded) .open-body { display: none; }
+
+  .closing-loop {
+    background: var(--yellow);
+    margin: 24px 0 0;
+    margin-left: -80px;
+    padding: 30px 40px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+  }
+  .closing-loop .eyebrow {
+    color: var(--text-dark);
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 0.9;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .closing-loop p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  .tele-hac { padding: 100px 32px; max-width: 900px; margin: 0 auto; }
+  .tele-hac .eyebrow {
+    color: var(--green);
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .tele-hac h2 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin-bottom: 30px;
+  }
+  .tele-hac p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--text-body);
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .hac-intro, .nandurbar-grid { grid-template-columns: 1fr; gap: 32px; }
+    .hac-model-title h2 { font-size: 32px; }
+    .nandurbar h2 { font-size: 32px; }
+    .closing-loop { margin: -48px auto 40px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="KB-logo.svg" alt="Khushi Baby"></a>
+    <nav class="nav-links">
+      <a href="#">ABOUT KB</a>
+      <div class="nav-item">
+        <a href="index.html" class="active">OUR WORK <span class="caret">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="index.html">Overview</a>
+          <a href="operating-system.html">Operating System</a>
+          <a href="chip.html">CHIP Platform</a>
+          <a href="health-action-centers.html" class="active">Health Action Centers</a>
+        </div>
+      </div>
+      <a href="#">AREAS WE IMPACT</a>
+      <a href="#">PUBLICATIONS</a>
+      <a href="#">GET INVOLVED</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hac-intro">
+  <div class="left">
+    <span class="eyebrow">HEALTH ACTION CENTERS</span>
+    <h1>We're deploying sustainable team units and processes within health departments to make informed decisions with the community</h1>
+  </div>
+  <div class="right">
+    <p>A Health Action Center is a lean, multidisciplinary unit co-established by the Khushi Baby team, the relevant government health department, and local partners. It identifies the primary health priorities within its geography, conducts a structured gap analysis across the DIA cycle, and then co-designs, implements, and iteratively refines targeted interventions.</p>
+  </div>
+</section>
+
+<div class="hac-model-title">
+  <h2>The HAC Model</h2>
+</div>
+
+<div class="flow-wrap">
+  <div class="flow-bg">
+    <img src="frame-4/OPERATINGMODEL/img-6.svg" alt="Health workers background">
+  </div>
+  <div class="flow-card" id="flow-card"></div>
+</div>
+
+<div style="width:100%;">
+  <div style="height:8px; background:var(--stripe-red);"></div>
+  <div style="height:5px; background:#F5A623;"></div>
+  <div style="height:3px; background:var(--stripe-yellow);"></div>
+</div>
+
+<section class="nandurbar">
+  <div class="title-wrap">
+    <span class="eyebrow">THE DIA LOOP IN ACTION</span>
+    <h2 data-bind="nandurbar.title"></h2>
+  </div>
+
+  <div class="nandurbar-grid">
+    <div>
+      <img src="frame-4/HEALTHAREAS/img-3.webp" alt="Nandurbar team at work" class="photo">
+    </div>
+    <div>
+      <div class="nandurbar-card">
+        <h3>Nandurbar Health Action Center</h3>
+        <div data-repeat="nandurbar.panels">
+          <div class="n-row" data-template>
+            <div class="n-head">
+              <span class="eyebrow" data-bind="eyebrow"></span>
+            </div>
+            <p class="open-body" data-bind="body"></p>
+          </div>
+        </div>
+      </div>
+      <div class="closing-loop">
+        <span class="eyebrow" data-bind="nandurbar.closingLoop.eyebrow"></span>
+        <p data-bind="nandurbar.closingLoop.body"></p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="tele-hac">
+  <span class="eyebrow">SCALING HAC</span>
+  <h2>Tele-HAC: Scaling the Action Layer for Community Outreach</h2>
+  <p>The current HAC model is powerful but human-intensive. TeleHAC is a forthcoming AI-augmented module within the CHIP dashboard that transforms the manual call center operation into a scalable, quality-monitored community outreach system.</p>
+  <p>Where a manual call center is constrained by operator bandwidth and supervision capacity, TeleHAC brings in automated triage prioritization — surfacing the highest-risk beneficiaries for next follow-up — structured counseling support for operators, and longitudinal tracking of conversation quality. The goal is to extend the reach and depth of community follow-up without proportionally scaling the team size, and to generate the kind of systematic learning about what counseling approaches work that a manual system cannot produce.</p>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h5 class="footer-org" data-bind="footer.org"></h5>
+      <div class="f-address-row">
+        <div class="f-address">
+          <h5 class="footer-label">INDIA ADDRESS</h5>
+          <p data-bind="footer.india"></p>
+        </div>
+        <div class="f-address">
+          <h5 class="footer-label">US ADDRESS</h5>
+          <p data-bind="footer.us"></p>
+        </div>
+      </div>
+    </div>
+    <div class="f-links" data-repeat="footer.links">
+      <a data-template href="" data-bind-href="href" data-bind="label"></a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-bind="footer.copy"></div>
+</footer>
+
+<script src="render.js"></script>
+<script>
+/* Render the HAC flow card and expand first Nandurbar row */
+document.addEventListener('DOMContentLoaded', function(){
+  setTimeout(function(){
+    var data = window.KB_DATA;
+    if (!data) return;
+
+    /* Flow card */
+    if (Array.isArray(data.hacSteps)) {
+      var root = document.getElementById('flow-card');
+      if (root) {
+        function step(text) {
+          var d = document.createElement('div');
+          d.className = 'flow-step';
+          d.textContent = text;
+          return d;
+        }
+        function arrow() {
+          var a = document.createElement('div');
+          a.className = 'flow-arrow';
+          return a;
+        }
+        function branches() {
+          var b = document.createElement('div');
+          b.className = 'flow-branches';
+          var items = [
+            { h: 'Data',     p: 'Chip App, Dashboard, And Whatsapp Group Set Up. System Of Data Collection Established' },
+            { h: 'Insights', p: 'Analysing Triage List, Hotspot Maps, Blindspots, Overlaps, Data-Quality, Etc. To Address The Identified Gaps' },
+            { h: 'Action',   p: 'Implementing Health Services, Trainings, Screening Camps, Resource Reallocations, Call Center Modules, Public Health Mandates & Innovations' }
+          ];
+          items.forEach(function(it){
+            var wrap = document.createElement('div');
+            wrap.className = 'branch';
+            var h = document.createElement('h5'); h.textContent = it.h; wrap.appendChild(h);
+            var p = document.createElement('p'); p.textContent = it.p; wrap.appendChild(p);
+            b.appendChild(wrap);
+          });
+          return b;
+        }
+
+        var steps = data.hacSteps;
+        for (var i = 0; i < 3 && i < steps.length; i++) {
+          root.appendChild(step(steps[i]));
+          root.appendChild(arrow());
+        }
+        root.appendChild(step(steps[3]));
+        /* no arrow here — branches connects via its own line */
+        root.appendChild(branches());
+        root.appendChild(arrow());
+        for (var j = 4; j < steps.length; j++) {
+          root.appendChild(step(steps[j]));
+          if (j < steps.length - 1) root.appendChild(arrow());
+        }
+      }
+    }
+
+    /* Expand first Nandurbar row; wire click toggles */
+    var nrows = document.querySelectorAll('.n-row');
+    if (nrows.length) {
+      nrows[0].classList.add('expanded');
+      nrows.forEach(function(r){
+        var head = r.querySelector('.n-head');
+        if (head) head.addEventListener('click', function(){ r.classList.toggle('expanded'); });
+      });
+    }
+  }, 150);
+});
+</script>
+</body>
+</html>

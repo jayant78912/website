@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khushi Baby — CHIP Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Lato:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body { background: #ffffff; }
+
+  .chip-hero { padding: 0 0 36px; text-align: center; }
+  .chip-hero h1 { font-family: 'Lora', serif; font-size: 70px; line-height: 1; max-width: 800px; margin: 0 auto 48px; font-weight: 600; letter-spacing: 0; color: #212121; }
+
+  .chip-stats {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-bottom: 36px;
+  }
+  .chip-stats .chip {
+    background: #fff;
+    border-radius: 15px;
+    min-width: 325px;
+    flex: 1;
+    min-height: 148px;
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: none;
+  }
+  .chip-stats .chip .num {
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    color: var(--green);
+    margin-bottom: 10px;
+    font-weight: 900;
+    display: block;
+    line-height: 0.9;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .chip-stats .chip p {
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    color: var(--green);
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .chip-hero-wrap {
+    position: relative;
+    margin-bottom: 0;
+  }
+  .chip-hero-wrap .chip-banner {
+    width: 100%;
+  }
+  .chip-hero-wrap .chip-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: -5px;
+  }
+  .chip-hero-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, #F8F5F2 32.87%, rgba(248, 245, 242, 0) 73.17%);
+    z-index: 1;
+  }
+  .chip-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 60px 32px 80px;
+    width: 100%;
+  }
+
+  .response-card {
+    background: #fff;
+    width: 1152px;
+    max-width: 90vw;
+    min-height: 521px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: -260px auto 0;
+    padding: 50px 64px;
+    text-align: center;
+    box-shadow: 0 18px 60px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    position: relative;
+    z-index: 3;
+  }
+  .response-card h2 { font-family: 'Lora', serif; font-size: 42px; font-weight: 500; margin-bottom: 18px; line-height: 1.25; }
+  .response-card p { font-family: 'Lato', sans-serif; font-size: 24px; font-weight: 400; color: var(--text-body); line-height: 1.7; max-width: 800px; margin: 0 auto; }
+
+  .census-band {
+    background: var(--green);
+    color: #fff;
+    padding: 340px 0 40px;
+    margin-top: -270px;
+  }
+  .census-stats {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    text-align: right;
+  }
+  .census-stats p {
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.5;
+    margin: 0 0 30px;
+    max-width: 500px;
+    margin-left: auto;
+  }
+
+  .census-split {
+    position: relative;
+  }
+  .census-split-green {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 100px;
+    background: var(--green);
+  }
+  .census-split-white {
+    position: absolute;
+    top: 100px; left: 0; right: 0;
+    bottom: 0;
+    background: #ffffff;
+  }
+  .census-split-inner {
+    position: relative;
+    z-index: 2;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .census-split-inner .img-col {
+    margin-left: -78px;
+  }
+  .census-split-inner .img-col img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .census-split-inner .text-col {
+    padding-top: 200px;
+  }
+  .census-split-inner .text-col h3 {
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    text-decoration: none;
+  }
+  .census-split-inner .text-col p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.5;
+  }
+
+
+  .dia-layer { padding: 100px 0; }
+  .dia-layer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 70px;
+    align-items: start;
+  }
+  .dia-layer-inner h2 { font-family: 'Lora', serif; font-size: 38px; font-weight: 600; line-height: 1.1; margin-bottom: 24px; letter-spacing: 0; }
+  .dia-layer-inner img.cycle { width: 280px; margin-top: 30px; }
+
+  .layer-accordion {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  }
+  .layer-acc-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .layer-acc-item:last-child { border-bottom: none; }
+  .layer-acc-header {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--green);
+    padding: 22px 28px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .layer-acc-item.open .layer-acc-header {
+    color: var(--green);
+  }
+  .layer-acc-icon {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--green);
+  }
+  .layer-acc-body {
+    display: none;
+    padding: 0 28px 22px;
+  }
+  .layer-acc-item.open .layer-acc-body {
+    display: block;
+  }
+  .layer-acc-body p {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-body);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .dashboard-wrap {
+    position: relative;
+  }
+  .dashboard-wrap .dash-bg {
+    width: 100%;
+  }
+  .dashboard-wrap .dash-bg img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .unique-card {
+    position: relative;
+    background: var(--yellow);
+    max-width: 500px;
+    margin: -350px 0 -200px 32px;
+    padding: 40px 36px 32px;
+    border-radius: 15px;
+    z-index: 3;
+  }
+  .unique-card h4 { font-family: 'Lora', serif; font-size: 28px; margin-bottom: 24px; font-weight: 600; }
+  .unique-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+  }
+  .unique-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  .unique-item p { font-family: 'Lato', sans-serif; font-size: 14px; color: var(--text-dark); line-height: 1.6; margin: 0; }
+
+  .interop { background: var(--green); color: #fff; padding: 260px 0 110px; }
+  .interop-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .interop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 40px;
+  }
+  .interop .eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .interop h2 {
+    font-family: 'Lora', serif;
+    color: #fff;
+    font-size: 46px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+  .interop .interop-body {
+    font-family: 'Lato', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  .interop .interop-stat {
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    line-height: 1.4;
+    margin-bottom: 30px;
+  }
+  .interop .interop-tag-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+  .interop .tags { width: 380px; position: relative; height: 260px; margin-left: auto; }
+  .interop .tag {
+    background: #B0F0D0;
+    color: var(--text-dark);
+    padding: 14px 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    width: 200px;
+    min-height: 129px;
+    position: absolute;
+  }
+  .interop .tag.t1 { right: 0; top: 0; z-index: 1; }
+  .interop .tag.t2 { left: 100px; top: 85px; z-index: 2; box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+  .interop .tag.t3 { right: 0; top: 170px; z-index: 3; }
+  .interop .tag .n {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    display: block;
+    color: var(--text-dark);
+  }
+  .interop .tag .s {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .frontier {
+    position: relative;
+    padding: 110px 0;
+  }
+  .frontier::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: var(--green);
+  }
+  .frontier::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50%;
+    background: #ffffff;
+  }
+  .frontier .stripe-divider {
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  .frontier .stripe-divider .sr { height: 8px; background: var(--stripe-red); }
+  .frontier .stripe-divider .so { height: 5px; background: #F5A623; }
+  .frontier .stripe-divider .sy { height: 3px; background: var(--stripe-yellow); }
+  .frontier-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: grid;
+    grid-template-columns: 574px 1fr;
+    gap: 0;
+    align-items: center;
+  }
+  .frontier-inner img.hero { width: 574px; height: 677px; object-fit: cover; border-radius: 4px; }
+  .frontier-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 48px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    margin-left: -190px;
+    position: relative;
+    z-index: 2;
+  }
+  .frontier-card h2 {
+    font-family: 'Lora', serif;
+    font-size: 35px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0;
+    margin-bottom: 28px;
+  }
+  .frontier-acc {
+    margin-top: 14px;
+    overflow: hidden;
+  }
+  .frontier-acc .row {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  .frontier-acc .row:last-child { border-bottom: none; }
+  .frontier-acc .row span { font-weight: 900; font-size: 20px; color: var(--green); }
+  .frontier-acc .row-body {
+    display: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: var(--text-body);
+    padding: 12px 0 20px;
+  }
+  .frontier-acc .row.open + .row-body { display: block; }
+
+  .tribal-banner { background: #ffffff; padding: 70px 32px; text-align: center; }
+  .tribal-banner .eyebrow {
+    color: #038C73;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .tribal-banner h2 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 47px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    max-width: 800px;
+    margin: 0 auto 24px;
+  }
+  .tribal-banner p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--text-dark);
+  }
+
+  .opensource {
+    position: relative;
+    color: #fff;
+  }
+  .opensource .os-bg {
+    width: 100%;
+  }
+  .opensource .os-bg img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .opensource::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1;
+  }
+  .opensource-inner {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    max-width: 900px;
+    width: 100%;
+    padding: 0 32px;
+  }
+  .opensource .eyebrow {
+    color: #60B58B;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .opensource h2 {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: 0;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+  .opensource p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.5;
+    letter-spacing: 0;
+    color: rgba(255,255,255,0.85);
+  }
+  .opensource .btn {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.05em;
+    margin-top: 30px;
+    background: #fff;
+    color: var(--text-dark);
+    border-color: #fff;
+  }
+  .opensource .btn:hover {
+    background: var(--text-dark);
+    color: #fff;
+    border-color: var(--text-dark);
+  }
+
+  @media (max-width: 900px) {
+    .chip-stats, .census-inner, .census-bottom, .dia-layer-inner, .interop-inner,
+    .frontier-inner, .opensource-inner { grid-template-columns: 1fr; gap: 30px; }
+    .chip-hero h1 { font-size: 40px; }
+    .unique-card { margin: -60px 16px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="KB-logo.svg" alt="Khushi Baby"></a>
+    <nav class="nav-links">
+      <a href="#">ABOUT KB</a>
+      <div class="nav-item">
+        <a href="index.html" class="active">OUR WORK <span class="caret">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="index.html">Overview</a>
+          <a href="operating-system.html">Operating System</a>
+          <a href="chip.html" class="active">CHIP Platform</a>
+          <a href="health-action-centers.html">Health Action Centers</a>
+        </div>
+      </div>
+      <a href="#">AREAS WE IMPACT</a>
+      <a href="#">PUBLICATIONS</a>
+      <a href="#">GET INVOLVED</a>
+    </nav>
+  </div>
+</header>
+
+<section class="chip-hero-wrap">
+  <div class="chip-banner">
+    <img src="frame-3/Rectangle 13.webp" alt="CHIP background">
+  </div>
+  <div class="chip-hero-overlay">
+    <section class="chip-hero">
+      <h1>An integrated public<br/>health platform — CHIP</h1>
+      <div class="chip-stats" data-repeat="chipStats">
+        <div class="chip" data-template>
+          <span class="num" data-bind="num"></span>
+          <p data-bind="label"></p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<div class="response-card">
+  <h2>CHIP is our response to the challenge of fragmented healthcare that leads to fragmented care.</h2>
+  <p>Co-developed with community health workers after 250,000 hours in the field, CHIP is a unified, offline-ready digital platform that consolidates the entire work requirement of frontline health workers across all primary health care programs and reshapes it into a single digital health interface.</p>
+</div>
+
+<section class="census-band">
+  <div class="census-stats">
+    <p>CHIP reduces over 180 redundant indicators across 12 national health programs.</p>
+    <p>By 2030, we want CHIP to reach 100 million people across three states, with at least 80% coverage with 80% data quality</p>
+  </div>
+</section>
+
+<div class="census-split">
+  <div class="census-split-green"></div>
+  <div class="census-split-white"></div>
+  <div class="census-split-inner">
+    <div class="img-col">
+      <img src="frame-3/Group 166.svg" alt="CHIP health map">
+    </div>
+    <div class="text-col">
+      <h3>A digital health census at the village level</h3>
+      <p>Every deployment of the CHIP platform begins with a digital health census — a community health worker-led, structured enumeration of every household and family member within the geography. This establishes the population denominators that make all subsequent targeting possible. Without this foundation, insights are directional at best; with it, they are actionable.</p>
+      <p>The census establishes a live list of individuals against which longitudinal health programs can follow already-registered individuals. It maps multi-dimensional vulnerability at the village level — social, economic, geographic, and health — creating the substrate for every insight and every action that follows.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" style="max-width: 1100px; margin: 40px auto; border: none; border-top: 1px solid var(--text-dark);">
+
+<section class="dia-layer">
+  <div class="dia-layer-inner">
+    <div>
+      <h2>CHIP enables community health workers and health officials to move through the full Data–Insights–Action cycle from a single platform.</h2>
+      <img src="frame-3/Group 142.svg" alt="DIA cycle" class="cycle">
+    </div>
+    <div class="layer-accordion">
+      <div class="layer-acc-item open">
+        <div class="layer-acc-header">At the data layer <span class="layer-acc-icon">–</span></div>
+        <div class="layer-acc-body">
+          <p>Community health workers use CHIP to perform a digital health census of their village, track health longitudinally across programs, and measure health service delivery progress in a unified interface. CHIP reduces over 180 redundant indicators over 12 national health programs.</p>
+        </div>
+      </div>
+      <div class="layer-acc-item">
+        <div class="layer-acc-header">At the insights layer <span class="layer-acc-icon">+</span></div>
+        <div class="layer-acc-body">
+          <p>CHIP empowers health officials with AI and GIS-based dashboards providing real-time monitoring of community needs and health system performance across multiple health programs. Geospatial mapping makes it possible to see where high-risk populations are concentrated, where service delivery gaps exist, and where targeted action is most urgently needed. These insights flow to health officials at the block, district, and state level, enabling data-informed decision-making.</p>
+        </div>
+      </div>
+      <div class="layer-acc-item">
+        <div class="layer-acc-header">At the action layer <span class="layer-acc-icon">+</span></div>
+        <div class="layer-acc-body">
+          <p>CHIP enables longitudinal follow-up across health areas, ensuring individuals identified as high-risk are tracked throughout their full care journey and not lost between visits, referrals, or departments. The dashboard enables health officials to directly link insights to actions by prompting users to schedule follow-ups, reallocate resources, and trigger coordinated response.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard-wrap">
+  <div class="dash-bg">
+    <img src="frame-3/OPERATINGMODEL/img-1.webp" alt="CHIP dashboard">
+  </div>
+</section>
+
+<div class="unique-card">
+  <h4>What's Unique About CHIP</h4>
+  <div class="unique-item">
+    <img class="unique-icon" src="frame-3/icon-1.svg" alt="">
+    <p>It is <strong>designed as a digital public good</strong> to be owned, adapted, and scaled by govts.</p>
+  </div>
+  <div class="unique-item">
+    <img class="unique-icon" src="frame-3/icon-2.svg" alt="">
+    <p>A <strong>unified interface</strong> across health workers and national health programs.</p>
+  </div>
+  <div class="unique-item">
+    <img class="unique-icon" src="frame-3/icon-3.svg" alt="">
+    <p>It is <strong>co-designed</strong> with community health workers and built for the last mile.</p>
+  </div>
+  <div class="unique-item">
+    <img class="unique-icon" src="frame-3/icon-4.svg" alt="">
+    <p>It is <strong>evidence-based and scale-tested</strong>, validated through a 3,200 patient randomized controlled trial and deployed at scale across 60,000 health workers reaching 60 million beneficiaries.</p>
+  </div>
+</div>
+
+<section class="interop">
+  <div class="interop-inner">
+    <span class="eyebrow">INTEGRATION AND INSTITUTIONALIZATION</span>
+    <div class="interop-grid">
+      <div>
+        <h2>CHIP does not operate as a standalone tool. It is designed as an interoperability layer across India's public health data ecosystem.</h2>
+        <p class="interop-body">These integrations that allow linkage between the identification of a malnourished child in the nutrition department to their treatment completion in the health department; that allow TB surveillance to draw on a census of 40 million people to target the most vulnerable; and that allow an immunization campaign to surface the zero-dose infant the routine system had missed.</p>
+        <p class="interop-body">CHIP also powers India's first village-level maps of climate-health vulnerability and multi-dimensional poverty for resource allocation decisions across departments. Beyond government systems, eight implementing and research partners have been onboarded onto CHIP.</p>
+      </div>
+      <div style="max-width: 320px; margin-left: auto;">
+        <p class="interop-stat">As of 2025, the platform is connected to 11 state and central govt. platform linkages, enabling data to flow across formerly siloed vertical programs.</p>
+        <p class="interop-tag-label">Featured Vertical Health Registries Integrated</p>
+        <div class="tags">
+          <div class="tag t1">
+            <span class="n">Poshan Tracker</span>
+            <span class="s">National Nutrition Tracking</span>
+          </div>
+          <div class="tag t2">
+            <span class="n">Ni-kshay</span>
+            <span class="s">National TB Registry</span>
+          </div>
+          <div class="tag t3">
+            <span class="n">Ayushman Bharat Digital Health ID</span>
+            <span class="s">National Health ID System</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  /* Position the interop tags dynamically after rendering */
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      var tags = document.querySelectorAll('.interop .tag');
+      tags.forEach(function(t, i){ t.classList.add('t' + (i+1)); });
+    }, 150);
+
+    /* Layer accordion toggle */
+    document.querySelectorAll('.layer-acc-header').forEach(function(header){
+      header.addEventListener('click', function(){
+        var item = header.parentElement;
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.layer-acc-item').forEach(function(i){
+          i.classList.remove('open');
+          i.querySelector('.layer-acc-icon').textContent = '+';
+        });
+        if (!wasOpen) {
+          item.classList.add('open');
+          item.querySelector('.layer-acc-icon').textContent = '–';
+        }
+      });
+    });
+
+    /* Frontier accordion toggle */
+    document.querySelectorAll('.frontier-acc .row').forEach(function(row){
+      row.addEventListener('click', function(){
+        var wasOpen = row.classList.contains('open');
+        document.querySelectorAll('.frontier-acc .row').forEach(function(r){
+          r.classList.remove('open');
+          r.querySelector('span').textContent = '+';
+          var body = r.nextElementSibling;
+          if (body && body.classList.contains('row-body')) body.style.display = 'none';
+        });
+        if (!wasOpen) {
+          row.classList.add('open');
+          row.querySelector('span').textContent = '–';
+          var body = row.nextElementSibling;
+          if (body && body.classList.contains('row-body')) body.style.display = 'block';
+        }
+      });
+    });
+  });
+</script>
+
+<section class="frontier">
+  <div class="stripe-divider">
+    <div class="sr"></div>
+    <div class="so"></div>
+    <div class="sy"></div>
+  </div>
+  <div class="frontier-inner">
+    <div>
+      <img src="frame-3/HEALTHAREAS/img-3.webp" alt="Frontline worker with phone" class="hero">
+    </div>
+    <div class="frontier-card">
+      <h2>Frontier innovations:<br/>transforming health practice</h2>
+      <div class="frontier-acc">
+        <div class="row open">SMARTPHONE DIAGNOSTICS <span>–</span></div>
+        <div class="row-body" style="display:block;">KB is leveraging the community health worker's smartphone as a non-invasive tool to increase access to timely screening for already active referral pathways, starting with maternal anemia (MAHILA) and pediatric illness triage. Machine learning algorithms are being developed, validated, and prepared for integration into government digital health workflows. MAHILA — trained on 3,021 pregnant women, the largest dataset to date — demonstrates over 94% sensitivity and 100% specificity for moderate-or-worse anemia in phase one research. Validation across medical colleges and primary health centers is underway, with independent certification as a software medical device targeted by 2028. This one example of how emerging diagnostics can be embedded and tested on a community health worker platform operating at scale.</div>
+        <div class="row">AGENTS FOR PUBLIC HEALTH <span>+</span></div>
+        <div class="row-body"></div>
+        <div class="row">PRECISION PUBLIC HEALTH DASHBOARDS <span>+</span></div>
+        <div class="row-body"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tribal-banner">
+  <span class="eyebrow">CHIP AS A MEASUREMENT TOOL FOR POLICY CHANGE</span>
+  <h2>CHIP data has been used to inform the Maharashtra Tribal Health Report 2025</h2>
+  <p>An effectiveness study for the Community Health Officer cadre roll-out in Rajasthan, and an Exemplars in Global Health report on digital health platform impact in India. Partners can leverage the CHIP platform to measure what works by observing changes in real-time, village-level data updated by community health workers.</p>
+</div>
+
+<section class="opensource">
+  <div class="os-bg">
+    <img src="frame-3/HEALTHAREAS/img-6.svg" alt="Community health workers">
+  </div>
+  <div class="opensource-inner">
+    <span class="eyebrow">UNLOCKING NETWORK EFFECTS</span>
+    <h2>We are committed to open-sourcing our platform, data sets, models, and playbooks to activate a partner ecosystem to respond to local public health needs at scale and with rootedness.</h2>
+    <p>Using the DIA framework, we believe we can compound learnings for public health impact. Each additional year of census data improves the accuracy of vulnerability targeting. Each additional integration unlocks a new cross-program view. Each partner onboarded adds evidence towards effective and coordinated public health interventions. Each HAC cycle contributes to a playbook that makes the next deployment faster and better-calibrated.</p>
+    <a href="operating-system.html" class="btn">ABOUT OUR OPERATING MODEL</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h5 class="footer-org" data-bind="footer.org"></h5>
+      <div class="f-address-row">
+        <div class="f-address">
+          <h5 class="footer-label">INDIA ADDRESS</h5>
+          <p data-bind="footer.india"></p>
+        </div>
+        <div class="f-address">
+          <h5 class="footer-label">US ADDRESS</h5>
+          <p data-bind="footer.us"></p>
+        </div>
+      </div>
+    </div>
+    <div class="f-links" data-repeat="footer.links">
+      <a data-template href="" data-bind-href="href" data-bind="label"></a>
+    </div>
+  </div>
+  <div class="footer-bottom" data-bind="footer.copy"></div>
+</footer>
+
+<script src="render.js"></script>
+</body>
+</html>

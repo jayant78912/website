@@ -1,0 +1,194 @@
+{
+  "brand": {
+    "name": "Khushi Baby Association",
+    "tagline": "Making public health data meaningful, connected and actionable",
+    "lede": "We partner with Government Health Departments in India to close the feedback loop between data collection and coordinated care"
+  },
+
+  "quote": {
+    "title": "Public health systems cannot respond to needs they can't see",
+    "body": "Across health systems, vast amounts of data are collected every day without translating into timely decisions or meaningful action. Information remains fragmented across programs and platforms, leaving frontline health workers overburdened and decision makers without clear insights into what is happening on the ground."
+  },
+
+  "diaLead": "We are strengthening the public health system by closing the gap between data, insights and action — to enable timely and critical health services to the most vulnerable.",
+
+  "depthReach": {
+    "eyebrow": "DEPTH & REACH",
+    "title": "We are closely working with government bodies in Rajasthan, Maharashtra and Karnataka across primary health care.",
+    "cta": "PROGRAMS WE RUN",
+    "sideNote": "OUR DIGITAL PLATFORMS SUPPORT 80,000+ COMMUNITY HEALTH WORKERS, AND REACH 60 MILLION+ PEOPLE ACROSS THREE STATES."
+  },
+
+  "inhouse": {
+    "eyebrow": "BUILT TO DRIVE SYSTEMIC CHANGE",
+    "p1": "We run an in-house multidisciplinary team of tech, data science, programs, policy and implementation.",
+    "p2": "This makes it possible for us to work with stakeholders across the healthcare system and close the missing feedback loop of healthcare to all communities."
+  },
+
+  "hiring": {
+    "title": "We're hiring specialists who are deeply invested in strengthening public health in India",
+    "cta": "VIEW JOB OPENINGS"
+  },
+
+  "next3": {
+    "p1": "The next three years for Khushi Baby is focused around scaling deep.",
+    "p2": "We are closely working with every stakeholder in the State healthcare ecosystem to ensure the data collected is carefully analysed by smart tech and leveraged to rapidly make tactical actions.",
+    "cta": "OUR FUNDING NEEDS"
+  },
+
+  "stats": [
+    { "num": "85,000+",    "label": "HEALTH WORKERS SUPPORTED" },
+    { "num": "60 Million+", "label": "PEOPLE'S HEALTH TRACKED" },
+    { "num": "$20 MILLION", "label": "OF GOVT. FUNDS INVESTED" }
+  ],
+
+  "chipStats": [
+    { "num": "60 Million+",      "label": "PEOPLE REGISTERED ACROSS 40K+ VILLAGES" },
+    { "num": "10 MILLION+",      "label": "ADDED THROUGH FIRST-TIME CENSUS IN 5 NEW DISTRICTS IN 2025" },
+    { "num": "ADVANCED MAPPING", "label": "Multi-dimensional social-health vulnerability mapped at village level" }
+  ],
+
+  "dia": [
+    { "title": "DATA",    "body": "Our digital platforms make data collection simple and free of duplication for frontline health workers. Information captured on the ground is consolidated and made visible to the right stakeholders in the system." },
+    { "title": "INSIGHT", "body": "Our analytical infrastructure converts raw data into clear, decision-ready insights that are presented in ways that make action straightforward for everyone in the system." },
+    { "title": "ACTION",  "body": "Our health action centres enable data-driven decisions and improved health services to close the loop of healthcare to the last-mile communities. This can come from a change in policy, program, practice or partnership." }
+  ],
+
+  "caseStudies": [
+    { "title": "Data driven maternal and child health care", "img": "frame-1/LANDING/story-1.webp" },
+    { "title": "Closing the immunization gap",                "img": "frame-1/LANDING/story-2.webp" },
+    { "title": "Closing the child nutrition care continuum",  "img": "frame-1/LANDING/story-3.webp" }
+  ],
+
+  "testimonials": [
+    {
+      "id": "neeraj",
+      "photo": "frame-1/testimonials/neeraj.webp",
+      "quote": "Khushi Baby has tested, scaled up a model, which is fantastic. It's integrated, it's providing a lot of efficiency. What I like about what KB has done is they haven't actually tried to push a digital solution in. They have tried to solve a real problem by using digital. And that is exactly what needs to be done. Look at the problem. If it needs a digital intervention, yes, but let's not just take any bright, shiny object and push it in.",
+      "name": "NEERAJ JAIN",
+      "role": "Director Growth Operations, Asia, Middle East & Europe (AMEE), PATH"
+    },
+    {
+      "id": "rakesh",
+      "photo": "frame-1/testimonials/rakesh.webp",
+      "quote": "All the apps available in the open market are created by software engineers. Why these were not successfully implemented is because the needs of the healthcare person is different. Khushi Baby had an advantage over it because they have public health experts in their system, they have computer experts in their system so understanding what the government, what the community want can be easily translated to the software expert.",
+      "name": "DR. RAKESH VISHVAKARMA",
+      "role": "Sub Regional Team leader Rajasthan, WHO"
+    }
+  ],
+
+  "partners": {
+    "government": [
+      { "name": "Rajasthan Health and Wellness",                 "img": "frame-1/govlogos/gov1.svg" },
+      { "name": "Government of Karnataka, Department of Health", "img": "frame-1/govlogos/gov2.svg" },
+      { "name": "Government of Maharashtra",                     "img": "frame-1/govlogos/gov3.svg" }
+    ],
+    "rd": [
+      { "name": "CHIC",                         "img": "frame-1/RDlogos/chic.svg" },
+      { "name": "Wadhwani AI",                  "img": "frame-1/RDlogos/wadhwani.svg" },
+      { "name": "ARMMAN",                       "img": "frame-1/RDlogos/armman.svg" },
+      { "name": "CARDS",                        "img": "frame-1/RDlogos/cards.svg" },
+      { "name": "Google Health",                "img": "frame-1/RDlogos/googlehealth.svg" },
+      { "name": "J-PAL",                        "img": "frame-1/RDlogos/jpal.svg" },
+      { "name": "PATH",                         "img": "frame-1/RDlogos/path.svg" },
+      { "name": "Harvard",                      "img": "frame-1/RDlogos/harvard.svg" },
+      { "name": "Audere",                       "img": "frame-1/RDlogos/audere.svg" },
+      { "name": "Google AI",                    "img": "frame-1/RDlogos/googleai.svg" },
+      { "name": "Yale School of Public Health", "img": "frame-1/RDlogos/yale.svg" },
+      { "name": "Microsoft Research",           "img": "frame-1/RDlogos/microsoft.svg" }
+    ],
+    "funding": [
+      { "name": "Skoll",                "img": "frame-1/fundinglogos/skoll.svg" },
+      { "name": "Trinity",              "img": "frame-1/fundinglogos/trinity.svg" },
+      { "name": "Infosys",              "img": "frame-1/fundinglogos/infosys.svg" },
+      { "name": "India Health Fund",    "img": "frame-1/fundinglogos/ihf.svg" },
+      { "name": "AGT",                  "img": "frame-1/fundinglogos/agt.svg" },
+      { "name": "ARM",                  "img": "frame-1/fundinglogos/arm.svg" },
+      { "name": "Gavi",                 "img": "frame-1/fundinglogos/gavi.svg" },
+      { "name": "GIZ",                  "img": "frame-1/fundinglogos/giz.svg" },
+      { "name": "J&J",                  "img": "frame-1/fundinglogos/jj.svg" },
+      { "name": "Google.org",           "img": "frame-1/fundinglogos/google.svg" },
+      { "name": "Patrick J. McGovern",  "img": "frame-1/fundinglogos/patrick.svg" }
+    ]
+  },
+
+  "awards": [
+    { "title": "HP Prize for Advancing Digital Equity Winner",                     "year": "2023" },
+    { "title": "Patrick J. McGovern Prize for AI in Humanity winner",              "year": "2023" },
+    { "title": "Marico Innovation Foundation's Innovation for India Award winner", "year": "2023" },
+    { "title": "PATH's Climate X Health Challenge Winner",                         "year": "2023" },
+    { "title": "Skoll Award for Social Innovation",                                "year": "2024" }
+  ],
+
+  "howItWorks": [
+    { "eyebrow": "Understanding the Needs Onground",      "body": "Every deployment begins by sitting with district and state health leadership to identify the most pressing health priority — whether maternal mortality, child malnutrition, TB, immunisation gaps, or another program. We establish a baseline, identify where the care cascade breaks, and define what closing the loop looks like here. This is not a rapid assessment. It takes time, field visits, and co-design with community health workers." },
+    { "eyebrow": "Building Infra to Support the Process", "body": "We co-establish a lean embedded unit with the government — a Health Action Center. A program manager, a data analyst, field nurses and operators. Small enough to move fast, embedded deeply enough to understand the day-to-day reality of the health department." },
+    { "eyebrow": "Effective Data Collection",             "body": "We deploy CHIP and conduct a digital health census at the village level. This establishes the population denominators that make every subsequent insight actionable. Without this foundation, insights are directional at best; with it, they are actionable." },
+    { "eyebrow": "Decision-grade Insights",               "body": "Geospatial mapping, triage lists, hotspot maps and data-quality views surface where the gaps are — in real time. Insights flow to officials at block, district and state level." },
+    { "eyebrow": "Activating Embedded Action Units",      "body": "HACs translate insights into coordinated action: trainings, screening camps, resource reallocation, call-center modules, public health mandates. Periodic review drives iterative learning back into the model." },
+    {
+      "eyebrow": "Driving change beyond Action Centers",
+      "body": "Closing the loop at the district level creates evidence and tools that travel further — informing policy at state and national level, enabling partner organizations to reach communities Khushi Baby cannot, and building a continuously improving evidence base for what works in public health.",
+      "subItems": [
+        "Scale deep",
+        "A/B testing what works",
+        "Informing programs at scale",
+        "Shared for others to build on"
+      ]
+    }
+  ],
+
+  "chipLayers": [
+    { "eyebrow": "At the data layer",     "body": "Community health workers use CHIP to perform a digital health census of their village, track health longitudinally across programs, and measure health service delivery progress in a unified interface. CHIP reduces over 180 redundant indicators over 12 national health programs." },
+    { "eyebrow": "At the insights layer", "body": "CHIP empowers health officials with AI and GIS-based dashboards providing real-time monitoring of community needs and health system performance across multiple health programs. Geospatial mapping makes it possible to see where high-risk populations are concentrated, where service delivery gaps exist, and where targeted action is most urgently needed. These insights flow to health officials at the block, district, and state level, enabling data-informed decision-making." },
+    { "eyebrow": "At the action layer",   "body": "CHIP enables longitudinal follow-up across health areas, ensuring individuals identified as high-risk are tracked throughout their full care journey and not lost between visits, referrals, or departments. The dashboard enables health officials to directly link insights to actions by prompting users to schedule follow-ups, reallocate resources, and trigger coordinated response." }
+  ],
+
+  "chipIntegrations": [
+    { "name": "Poshan Tracker",                     "sub": "national nutrition tracking" },
+    { "name": "Ni-kshay",                           "sub": "national TB registry" },
+    { "name": "Ayushman Bharat Digital Health ID",  "sub": "national health ID system" }
+  ],
+
+  "chipUnique": [
+    "It is designed as a digital public good to be owned, adapted, and scaled by Govts.",
+    "A unified interface across health workers and national health programs.",
+    "It is co-designed with community health workers and built for the last mile.",
+    "It is evidence-based and scale-tested, validated through a 3,200 patient randomised controlled trial and deployed at scale across 80,000 health workers reaching 60 million beneficiaries."
+  ],
+
+  "hacSteps": [
+    "HACs get set up by KB team, Health Dept. and local partner",
+    "Primary health issue gets identified",
+    "DIA gap analysis conducted",
+    "Solutions proposed, reviewed & implemented",
+    "Periodic review, iterative learning and DIA adaptation",
+    "Playbook documentation for replication & scale"
+  ],
+
+  "nandurbar": {
+    "title": "Nandurbar Health Action Center",
+    "panels": [
+      { "eyebrow": "Context",                                    "body": "Nandurbar sits in northwestern Maharashtra — dense forests, hilly terrain, deeply rooted tribal communities with a 69% Scheduled Tribe population. The Maternal mortality is 4× the state average. In Nandurbar, we set up a six-person embedded team operating from the district administrative headquarters — program manager, data analyst, four nurses as call center operators — that turns routine health data into real-time action, ensuring no high-risk mother or child falls through the cracks." },
+      { "eyebrow": "Gather missing data",                         "body": "CHIP app, dashboard and WhatsApp group set up. A system of data collection established with the frontline cadre to fill gaps the routine MIS can't see." },
+      { "eyebrow": "Surface where the gaps are — in real time",   "body": "Analysing triage lists, hotspot maps, blindspots, overlaps and data quality to address identified gaps." },
+      { "eyebrow": "Translate insights into coordinated action",  "body": "Implementing health services, trainings, screening camps, resource reallocations, call-center modules, public health mandates and innovations." }
+    ],
+    "closingLoop": {
+      "eyebrow": "Closing the Loop: March 2026",
+      "body": "HAC Associates identified 3 high-risk newborns in Akkalkuwa, Dhadgaon, and Taloda blocks who had not received mandated home-based newborn care visits. Through 1–2 targeted follow-ups and coordination with frontline workers, all three were converted to compliance. Two low-birth-weight children showed significant weight gain. In one case, the child's weight was recorded for the first time since birth."
+    }
+  },
+
+  "footer": {
+    "org": "KHUSHI BABY ASSOCIATION",
+    "india": "18, Jai Ambey Colony, Civil Lines, Jaipur, Rajasthan 302006",
+    "us": "6016 Louis Way El Dorado Hills, CA 95762",
+    "links": [
+      { "label": "Careers",                  "href": "#" },
+      { "label": "Financials",               "href": "#" },
+      { "label": "Grievance Redressal Form", "href": "#" }
+    ],
+    "copy": "© 2026 KHUSHI BABY ASSOCIATION. ALL RIGHTS RESERVED"
+  }
+}
